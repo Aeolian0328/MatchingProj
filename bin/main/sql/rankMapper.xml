@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="rank">
+	<select id="all" resultType="apply.model.RankDto">
+		select * from graph
+	</select>
+	
+	<select id="one" resultType="apply.model.RankDto" parameterType="String" >
+		select * from graph where month = #{month} 
+	</select>
+	
+	<select id="month" resultType="apply.model.RankDto" parameterType="String">
+	
+	select *
+from graph
+where month = #{month3}
+order by nu_count desc
+limit 5;
+
+	</select>
+	
+	<select id="use" resultType="apply.model.RankDto" parameterType="String">
+select month, sum(nu_count) as sum
+from graph
+group by month 
+having month like CONCAT(#{year},'%');
+	</select>
+
+	<select id="radar" resultType="apply.model.SubjectDto">
+select distinct(subjecttag)
+from subject;
+	</select>
+	
+	
+		<select id="user_hap" resultType="apply.model.RankDto" parameterType="String">
+select g.subject, sum(g.nu_count) as sum
+from graph g,subject s
+where g.subject = s.subjectName
+and s.subjecttag = #{user_hap_total}
+
+	</select>
+
+</mapper>
+
+
+
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="subject">
+
+	<select id="all" resultType="apply.model.SubjectDto">
+		select * from subject
+	</select>
+	
+	<select id="one" resultType="apply.model.SubjectDto" parameterType="String">
+		select * from subject where subjectName=#{a}
+	</select>
+	
+	<update id="countup" parameterType="apply.model.SubjectDto">
+		update subject
+		set studentCount=studentCount+1
+		where subjectName=#{subjectName}
+	</update>
+	
+		<update id="fail" parameterType="apply.model.SubjectDto">
+		update subject
+		set studentCount=studentCount-1
+		where subjectName=#{subjectName}
+	 </update>
+	 
+	
+	 <select id="create" parameterType="HashMap">	
+	   ${sql}
+      </select>
+      
+     
+     
+      <insert id="apply" parameterType="apply.model.SubjectDto">
+      	insert into ${subjectName} values(#{subjectName},#{s_email})
+      </insert>
+	
+	
+
+	
+	
+
+</mapper>
