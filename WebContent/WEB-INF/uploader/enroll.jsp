@@ -106,10 +106,20 @@ function inputPhoneNumber(obj) {
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">정보를 입력해주세요</h2>
 
       <!-- Upload Section Form -->
+      
+      <select name="subjecttag">
+    				<option value="">강좌 선택</option>
+    				<option value="컴퓨터">컴퓨터</option>
+  				   <option value="음악">음악</option>
+    				<option value="기타">기타</option>
+    				
+				</select>
+				
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
+
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>과목명</label>
@@ -228,6 +238,9 @@ function inputPhoneNumber(obj) {
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+            
+            
+
             
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">

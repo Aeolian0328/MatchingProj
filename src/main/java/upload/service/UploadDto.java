@@ -9,13 +9,12 @@ public class UploadDto {
 	private String subjectImage;
 	private String content;
 	private int cost;
+	private String subjecttag;
 	
 	public UploadDto() {}
-	
-	
 
 	public UploadDto(int subjectNum, String subjectName, String startTime, String endTime, String subjectImage,
-			String content, int cost) {
+			String content, int cost, String subjecttag) {
 		super();
 		this.subjectNum = subjectNum;
 		this.subjectName = subjectName;
@@ -24,9 +23,8 @@ public class UploadDto {
 		this.subjectImage = subjectImage;
 		this.content = content;
 		this.cost = cost;
+		this.subjecttag = subjecttag;
 	}
-
-
 
 	public int getSubjectNum() {
 		return subjectNum;
@@ -82,5 +80,17 @@ public class UploadDto {
 
 	public void setCost(int cost) {
 		this.cost = cost;
-	}	
+	}
+
+	public String getSubjecttag() {
+		return subjecttag;
+	}
+
+	public void setSubjecttag(String subjecttag) {
+		this.subjecttag = subjecttag;
+	}
+	
+	
+
+	
 }

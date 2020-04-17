@@ -17,11 +17,7 @@ public class UploadService {
 	public void setDao(UploadDao dao) {
 		this.dao = dao;
 	}
-	/*
-	 * public List<UploladDto> allselect(){ return dao.allselect(); }
-	 * 
-	 * public SubjectDto oneselect(String a) { return dao.oneselect(a); }
-	 */
+
 
 	public int insertUpload(UploadDto dto) {
 		return dao.insert(dto);

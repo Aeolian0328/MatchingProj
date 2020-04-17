@@ -12,8 +12,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select> -->
 	
 	<insert id="insert" parameterType="apply.model.SubjectDto">
-		insert into subject(subjectName, startTime, endTime, content, subjectImage, cost)
-		values(#{subjectName}, #{startTime}, #{endTime}, #{content}, #{subjectImage}, #{cost})
+		insert into subject(subjectName, startTime, endTime, content, subjectImage, cost, subjecttag)
+		values(#{subjectName}, #{startTime}, #{endTime}, #{content}, #{subjectImage}, #{cost}, #{subjecttag})
 	</insert>
 	
 </mapper>
