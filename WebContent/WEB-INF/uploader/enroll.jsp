@@ -223,7 +223,7 @@ function inputPhoneNumber(obj) {
             
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>강의 내용</label>
+                <label>강의 내용용</label>
                 <textarea class="form-control" id="content" name="content" rows="5" placeholder="강의 내용" required="required" data-validation-required-message="강의 내용을 입력해주세요."></textarea>
                 <p class="help-block text-danger"></p>
               </div>
