@@ -22,8 +22,8 @@ public class SubjectDao extends SqlSessionDaoSupport{
 	int m=0;
 	
 	
-	public List<SubjectDto> allselect(){
-		return getSqlSession().selectList("subject.all");
+	public List<SubjectDto> finish_sub(String finish_date){
+		return getSqlSession().selectList("subject.finish_all",finish_date);
 	}
 	
 	public SubjectDto oneselect(String a) {

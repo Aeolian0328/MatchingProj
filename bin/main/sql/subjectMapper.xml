@@ -11,6 +11,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from subject
 	</select>
 	
+	
+	<select id="finish_all" resultType="apply.model.SubjectDto" parameterType="String">
+		select * from subject 
+		where
+		<![CDATA[ endTime >= #{finish_date} ]]>
+	</select>
+	
+	
+	
+	
 	<select id="one" resultType="apply.model.SubjectDto" parameterType="String">
 		select * from subject where subjectName=#{a}
 	</select>

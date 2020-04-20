@@ -17,8 +17,8 @@ public class SubjectService {
 		this.dao = dao;
 	}
 
-	public List<SubjectDto> allselect() {
-		return dao.allselect();
+	public List<SubjectDto> finish_sub(String finish_date) {
+		return dao.finish_sub(finish_date);
 	}
 
 	
