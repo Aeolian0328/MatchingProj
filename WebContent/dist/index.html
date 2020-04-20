@@ -23,7 +23,7 @@
     			.done(function(args){
     				
 				for(var i=0;i<args.length;i++){
-					$("#body").append("<tr> <td>"+args[i].month+"</td><td>"+args[i].subject+"</td><td>"+args[i].count+"</td><td>"+args[i].nu_count+"</td></tr>");
+					$("#body").append("<tr> <td>"+args[i].subjectName+"</td><td>"+args[i].startTime+"</td><td>"+args[i].endTime+"</td><td>"+args[i].subjecttag+"</td><td>"+args[i].studentCount+"</td></tr>");
 		
 				}
 				$('#dataTable').DataTable();
@@ -190,7 +190,7 @@ function chart(args){
           yAxes: [{
             ticks: {
               min: 0,
-              max: 8000,
+              max: 1200,
               maxTicksLimit: 8
             },
             gridLines: {
@@ -330,8 +330,8 @@ function chart(args){
                 </li>
             </ul>
         </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
+<!--         <div id="layoutSidenav"> -->
+         <!--    <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
@@ -387,13 +387,16 @@ function chart(args){
                         Start Bootstrap
                     </div>
                 </nav>
-            </div>
-            <div id="layoutSidenav_content">
+            </div> -->
+<!--             <div id="layoutSidenav_content"> -->
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                    <br>
+                    <br>
+                    
+                        <h1 class="mt-4">Chart</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Chart</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
@@ -466,18 +469,20 @@ function chart(args){
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>month</th>
-                                                <th>subject</th>
-                                                <th>count</th>
-                                                <th>nu_count</th>
+                                                <th>subjectName</th>
+                                                <th>startTime</th>
+                                                <th>endTime</th>
+                                                <th>subjecttag</th>
+                                                <th>studentCount</th>
                                             </tr>
                                         </thead>
                                         <tfoot id="foot">
                                             <tr>
-                                                <th>month</th>
-                                                <th>subject</th>
-                                                <th>count</th>
-                                                <th>nu_count</th>
+                                                <th>subjectName</th>
+                                                <th>startTime</th>
+                                                <th>endTime</th>
+                                                <th>subjecttag</th>
+                                                <th>studentCount</th>
                                             </tr>
                                         </tfoot>
                                         <tbody id="body">

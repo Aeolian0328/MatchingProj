@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import apply.model.RankDto;
 import apply.model.SubjectDto;
 
 @Service
@@ -43,7 +44,11 @@ public class SubjectService {
 		return dao.s_enroll(a);
 	}
 	
-
+	
+	public List<SubjectDto> allselect(){
+		return dao.allselect();
+	}
+	
 
 
 

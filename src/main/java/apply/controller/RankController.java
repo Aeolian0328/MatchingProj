@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import apply.model.RankDto;
 import apply.model.SubjectDto;
 import apply.service.RankService;
+import apply.service.SubjectService;
 
 @Controller
 
@@ -25,6 +26,10 @@ public class RankController {
 	
 	@Autowired
 	RankService rank;
+	
+	@Autowired
+	SubjectService subject;
+	
 	
 //	@ModelAttribute("list")
 //	public LoginCommand formBacking() {
@@ -38,12 +43,13 @@ public class RankController {
 //	}
 	
 	@ModelAttribute("list")
-	public List<RankDto> Data() {
-		List<RankDto> list = rank.allselect();
+	public List<SubjectDto> Data() {
+		List<SubjectDto> list = subject.allselect();
 //		System.out.println(list);
 		return list;
 	}
 	
+
 	@RequestMapping(value = "/graph1.do")
 	public String form() {
 		return "apply/graph";
@@ -62,7 +68,7 @@ public class RankController {
 	@ResponseBody
 	public String one() throws Exception {
 		recent_date();
-		List<RankDto> list = rank.allselect();
+		List<SubjectDto> list = subject.allselect();
 		Gson json = new Gson(); 		
 		return json.toJson(list);
 	}
@@ -79,20 +85,20 @@ public class RankController {
 
 		recent_date();
 
-		List<RankDto> list1 = rank.month3(recent_date().get(0));
-		List<RankDto> list2 = rank.month3(recent_date().get(1));
-		List<RankDto> list3 = rank.month3(recent_date().get(2));
+		List<SubjectDto> list1 = rank.month3(recent_date().get(0));
+		List<SubjectDto> list2 = rank.month3(recent_date().get(1));
+		List<SubjectDto> list3 = rank.month3(recent_date().get(2));
 		
 		for(int i=0;i<list1.size();i++) {
-			month3_sub.add(list1.get(i).getSubject());
+			month3_sub.add(list1.get(i).getSubjectName());
 		}
 		
 		for(int i=0;i<list2.size();i++) {
-			month2_sub.add(list2.get(i).getSubject());
+			month2_sub.add(list2.get(i).getSubjectName());
 		}
 		
 		for(int i=0;i<list3.size();i++) {
-			month1_sub.add(list3.get(i).getSubject());
+			month1_sub.add(list3.get(i).getSubjectName());
 		}
 		
 		
@@ -102,30 +108,56 @@ public class RankController {
 		
 		
 		for(int i=0;i<list1.size();i++) {
-			month3_count.add(list1.get(i).getNu_count());
+			month3_count.add(list1.get(i).getStudentCount());
 		}
 		
 		for(int i=0;i<list2.size();i++) {
-			month2_count.add(list2.get(i).getNu_count());
+			month2_count.add(list2.get(i).getStudentCount());
 		}
 		
 		for(int i=0;i<list3.size();i++) {
-			month1_count.add(list3.get(i).getNu_count());
+			month1_count.add(list3.get(i).getStudentCount());
 		}
 		
 		
 		List<String> year = new ArrayList<>(); 
+		List<String> ck = new ArrayList<>(); 
+		
 		Date today = new Date();
 		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy");
+		SimpleDateFormat sdformat1 = new SimpleDateFormat("MM");
+		
 		String a = sdformat.format(today);
+		String b = sdformat1.format(today);
+		
+		
 		System.out.println(a);
 		for(int i=1;i<=12;i++) {
 			year.add(a+"년"+i+"월");
 		}
 		
 		
+		for(int i=1;i<=12;i++) {
+			if(Integer.parseInt(b)>i) {
+				if(i<10) {
+					ck.add(a+"-0"+i);
+				}else {
+					ck.add(a+"-"+i);
+				}
+				
+			}
+		}
+		
+		System.out.println("asdsad"+ck);
+		
+		
+		
 		List<Integer> use_count = new ArrayList<>();
-		List<RankDto> list4 = rank.use(a);
+		List<SubjectDto> list4 = new ArrayList<SubjectDto>();
+		
+		for(int i=0;i<ck.size();i++) {
+			list4.addAll(rank.use(ck.get(i)));
+		}
 		
 		for(int i=0;i<list4.size();i++) {
 		use_count.add(list4.get(i).getSum());
@@ -143,7 +175,7 @@ public class RankController {
 		List<Integer> user_hap_total = new ArrayList<>(); 
 		System.out.println("태그네임"+tagname);
 		
-		List<RankDto> list6 = new ArrayList<>();
+		List<SubjectDto> list6 = new ArrayList<>();
 		
 		for(int i=0;i<tagname.size();i++) {
 //			System.out.println(tagname.get(i));
@@ -183,7 +215,7 @@ public class RankController {
 	public List<String> recent_date() {
 		
 		Date today = new Date();
-		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy.MM");
+		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM");
 		List<String> mon3_list = new ArrayList<>();
 			
 		

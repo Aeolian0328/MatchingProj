@@ -27,18 +27,18 @@ public class RankService {
 		return dao.oneselect(month);
 	}
 	
-	public List<RankDto> month3(String month3){
+	public List<SubjectDto> month3(String month3){
 		return dao.month3(month3);
 	}
 	
-	public List<RankDto> use(String year){
+	public List<SubjectDto> use(String year){
 		return dao.use(year);
 	}
 	public List<SubjectDto> radar(){
 		return dao.radar();
 	}
 	
-	public List<RankDto> user_hap(String user_hap_total){
+	public List<SubjectDto> user_hap(String user_hap_total){
 		return dao.user_hap(user_hap_total);
 	}
 	 
