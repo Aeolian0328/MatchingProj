@@ -1,5 +1,7 @@
 package apply.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +31,9 @@ public class SubjectController {
 
 	@ModelAttribute("subject")
 	public List<SubjectDto> Data() {
-		List<SubjectDto> list = sub.allselect();
+		 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		 Calendar cal = Calendar.getInstance();
+		List<SubjectDto> list = sub.finish_sub(dateFormat.format(cal.getTime()));
 		return list;
 	}
 	

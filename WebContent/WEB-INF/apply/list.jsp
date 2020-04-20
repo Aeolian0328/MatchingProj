@@ -143,6 +143,8 @@
         <div class="row">
         
 		
+	
+		
 		<c:forEach var="subject" items="${subject}">
 			   <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
@@ -177,11 +179,9 @@
         		<small class="text-muted">&#9734; &#9734; &#9734; &#9734; &#9734;</small>
       		   </c:otherwise>
      				 </c:choose>
-      
               </div>
             </div>
           </div>
-			
 		</c:forEach>
 		
      
