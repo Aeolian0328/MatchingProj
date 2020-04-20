@@ -17,6 +17,9 @@ public class SubjectDto {
 	private String s_email;
 	private int studentCount;
 	private int subjectScore;
+	private int sum;
+	
+	
 	public int getSubjectNum() {
 		return subjectNum;
 	}
@@ -88,6 +91,12 @@ public class SubjectDto {
 	}
 	public void setSubjectScore(int subjectScore) {
 		this.subjectScore = subjectScore;
+	}
+	public int getSum() {
+		return sum;
+	}
+	public void setSum(int sum) {
+		this.sum = sum;
 	}
 
 

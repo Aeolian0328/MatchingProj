@@ -23,11 +23,11 @@ public class RankDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("rank.one",month);
 	}
 	
-	public List<RankDto> month3(String month3){
+	public List<SubjectDto> month3(String month3){
 		return getSqlSession().selectList("rank.month",month3);
 	}
 	
-	public List<RankDto> use(String year){
+	public List<SubjectDto> use(String year){
 		return getSqlSession().selectList("rank.use",year);
 	}
 	
@@ -35,7 +35,7 @@ public class RankDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("rank.radar");
 	}
 	
-	public List<RankDto> user_hap(String user_hap_total){
+	public List<SubjectDto> user_hap(String user_hap_total){
 		return getSqlSession().selectList("rank.user_hap", user_hap_total);
 	}
 	
