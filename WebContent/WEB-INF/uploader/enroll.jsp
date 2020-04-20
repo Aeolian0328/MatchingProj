@@ -16,6 +16,44 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css"/>
+            
+            <!-- 유효성 검사 -->
+<script>
+function checkSubject(){
+    var id = $('#subjectName').val();
+    $.ajax({
+        url:'/checkSubject.do',
+        type:'post',
+        data:{id:id},
+        success:function(data){
+            if($.trim(data)==0){
+                $('#chkMsg').html("사용가능");                
+            }else{
+                $('#chkMsg').html("사용불가");
+            }
+        }
+       
+    });
+};
+</script>
+<!-- <script>
+function checkSubject(){
+    var subjectName = $('#subjectName').val();
+    $.ajax({
+        url:'checkSubject.do',
+        type:"post",
+        data:"subjectName=" + subjectName,
+        dataType:"json"})
+        .done(function(args){
+            if(args.num==0){
+                alert("과목명이 사용가능합니다.");               
+            }else{
+                alert("과목명이 사용 불가능합니다.");
+                $('#subjectName').val('');
+            }
+        })
+};
+</script> -->
 
   <!-- 자동 -(하이픈) 생성 -->
 <script>
@@ -50,7 +88,7 @@ function inputPhoneNumber(obj) {
   <title>Upload page</title>
 
   <!-- Custom fonts for this theme -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -61,8 +99,7 @@ function inputPhoneNumber(obj) {
 
 <body id="page-top">
 
-<!-- 선생님 아이디 정보 가져오기 -->
-<input type="hidden" id="t_email" value="${t_email}"/>
+
  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -97,6 +134,9 @@ function inputPhoneNumber(obj) {
 <!-- insert.do -->
 <form method="post" action="insert.do">
 
+<!-- 선생님 아이디 정보 가져오기 -->
+<input type="hidden" id="t_email" value="${t_email}"/>
+
   <!-- Upload Section -->
   <section class="page-section" id="contact">
     <div class="container">
@@ -122,10 +162,13 @@ function inputPhoneNumber(obj) {
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>과목명</label>
-                <input class="form-control" id="subjectName" name="subjectName" type="text" placeholder="과목명" required="required" data-validation-required-message="과목명을 입력해주세요.">
+                <input class="form-control" id="subjectName" name="subjectName" type="text" placeholder="과목명" required="required" onkeyup="checkSubject()" data-validation-required-message="과목명을 입력해주세요.">
+                <span id="chkMsg"></span>
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+
+
             
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -138,6 +181,7 @@ function inputPhoneNumber(obj) {
                     <input type="text" class="form-control datetimepicker-input" name="startTime" data-target="#datetimepicker2" placeholder="시작일"/>
                     <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        <div class="container">
                     </div>
                 </div>
             </div>
@@ -194,10 +238,7 @@ function inputPhoneNumber(obj) {
                 <p class="help-block text-danger"></p>
               </div>
             </div>
-            
-            
-
-            
+                     
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>₩</label>
