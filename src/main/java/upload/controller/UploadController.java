@@ -8,19 +8,23 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import upload.service.*;
 
 @Controller
 public class UploadController {
-	
+
 	String filename;
 	String path1;
     byte barr[] = new byte[100];
@@ -32,8 +36,28 @@ public class UploadController {
 	@RequestMapping(value = "upload.do", method = RequestMethod.GET)
 	public String form(HttpSession session) {
 		session.getAttribute("t_email");
+		System.out.println(session.getAttribute("t_email"));
 		return "uploader/enroll";
 	}
+	
+	
+	@RequestMapping(value = "/checkSubject.do" , method = RequestMethod.POST)
+	public @ResponseBody String check(@ModelAttribute("ck") UploadDto ck , Model model) throws Exception{
+	    int result = service.subjectCheck(ck.getSubjectName());
+	    return String.valueOf(result);
+	}
+	
+	/*
+	 * @RequestMapping(value = "checkSubject.do" , method = RequestMethod.POST)
+	 * public @ResponseBody String subCheck(String subjectName) {
+	 * 
+	 * Gson gson = new Gson(); JsonObject json = new JsonObject(); int num = 0;
+	 * 
+	 * UploadDto dto = service.subjectCheck(subjectName); System.out.println(dto);
+	 * 
+	 * if(dto == null) { num = 0; } else { num = 1; } json.addProperty("num", num);
+	 * return gson.toJson(json); }
+	 */
 	
 	// DB에 값 보내기 + 날짜 형식 변경
 	@RequestMapping(value = "insert.do", method = RequestMethod.POST)
@@ -88,7 +112,7 @@ public class UploadController {
 	
 		return "uploader/enroll"; 
 	}
-	
+
 	// 이미지 첨부
 	@RequestMapping(value="image.do",method=RequestMethod.POST)  
 	public ModelAndView upload(@RequestParam CommonsMultipartFile file,HttpSession session){  

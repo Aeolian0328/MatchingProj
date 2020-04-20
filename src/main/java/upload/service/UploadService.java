@@ -1,10 +1,8 @@
 package upload.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import upload.service.UploadDao;
 
 
@@ -18,8 +16,11 @@ public class UploadService {
 		this.dao = dao;
 	}
 
-
 	public int insertUpload(UploadDto dto) {
 		return dao.insert(dto);
+	}
+	
+	public int subjectCheck(String subjectName) {
+		return dao.select(subjectName);
 	}
 }

@@ -10,11 +10,13 @@ public class UploadDto {
 	private String content;
 	private int cost;
 	private String subjecttag;
+	private String t_email;
 	
 	public UploadDto() {}
+		
 
 	public UploadDto(int subjectNum, String subjectName, String startTime, String endTime, String subjectImage,
-			String content, int cost, String subjecttag) {
+			String content, int cost, String subjecttag, String t_email) {
 		super();
 		this.subjectNum = subjectNum;
 		this.subjectName = subjectName;
@@ -24,7 +26,10 @@ public class UploadDto {
 		this.content = content;
 		this.cost = cost;
 		this.subjecttag = subjecttag;
+		this.t_email = t_email;
 	}
+
+
 
 	public int getSubjectNum() {
 		return subjectNum;
@@ -89,8 +94,14 @@ public class UploadDto {
 	public void setSubjecttag(String subjecttag) {
 		this.subjecttag = subjecttag;
 	}
-	
-	
+
+	public String getT_email() {
+		return t_email;
+	}
+
+	public void setT_email(String t_email) {
+		this.t_email = t_email;
+	}
 
 	
 }
