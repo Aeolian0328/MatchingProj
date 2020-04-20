@@ -17,7 +17,6 @@ public class SubjectDto {
 	private String s_email;
 	private int studentCount;
 	private int subjectScore;
-
 	public int getSubjectNum() {
 		return subjectNum;
 	}
@@ -30,7 +29,18 @@ public class SubjectDto {
 	public void setSubjectName(String subjectName) {
 		this.subjectName = subjectName;
 	}
-
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 	public String getContent() {
 		return content;
 	}
@@ -79,18 +89,8 @@ public class SubjectDto {
 	public void setSubjectScore(int subjectScore) {
 		this.subjectScore = subjectScore;
 	}
-	public String getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-	public String getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
+
+
 	
 	
 

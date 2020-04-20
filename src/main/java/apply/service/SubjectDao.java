@@ -3,6 +3,8 @@ package apply.service;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.jsp.tagext.TryCatchFinally;
+
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +66,7 @@ public class SubjectDao extends SqlSessionDaoSupport{
 	
 	public int s_enroll(SubjectDto a) {
 		try {
+			System.out.println("aa"+a.getS_email());
 			n = getSqlSession().insert("subject.apply",a);
 			if (n != 0) {
 				System.out.println("수강 신청 완료");
@@ -73,11 +76,14 @@ public class SubjectDao extends SqlSessionDaoSupport{
 				n=1;
 			}
 		} catch (Exception e) {
+			 e.printStackTrace();
 			n=2;
 			System.out.println("이미 등록된 수강생");
 		}
 		return n;
 	}
+	
+
 	
 	/*
 	 * public void s_enroll(SubjectDto a) {
