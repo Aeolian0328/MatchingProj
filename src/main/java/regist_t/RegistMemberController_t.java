@@ -1,14 +1,14 @@
 package regist_t;
 
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/RegistTeacher.do")
@@ -39,12 +39,15 @@ public class RegistMemberController_t
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public String submit(@ModelAttribute("memberInfo") MemberInfo_t memberInfo, BindingResult result, Model model) {
+    public String submit(@ModelAttribute("memberInfo") MemberInfo_t memberInfo, BindingResult result, Model model,HttpSession session) {
         vali.validate(memberInfo, result);
         if (result.hasErrors()) {
             return formViewName;
         }
         serv.insert(memberInfo);
-        return "teacher/t_regist/success";
+        
+        session.setAttribute("loginData",memberInfo);
+        
+        return "forward:/index.jsp";
     }
 }

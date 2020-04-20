@@ -18,17 +18,18 @@ public class LoginService {
 	private List<String> e;
 	    
 	    public List<String> getEmail() { return lDao.getEmail(); }
-	    public String getPassword(String s_email) { return lDao.getPassword(s_email);}
+	    public String getPassword(String email) { return lDao.getPassword(email);}
 	    public MemberInfo getMemberInfo(String s_email) { return lDao.getMemberInfo(s_email); }
 	    
 	    public Errors checkEmail(Object target, Errors errors) {
 	    	LoginCommand memberInfo= (LoginCommand)target;
 	        
 	        e = getEmail();
-	        String s_email = memberInfo.getS_email();
+	        String s_email = memberInfo.getEmail();
+	        System.out.println("이메일::"+s_email);
 	        String password = memberInfo.getPassword();
 	        if (s_email.equals("")) { 
-	        	errors.rejectValue("s_email", "required");
+	        	errors.rejectValue("email", "required");
 	        	if(password.equals("")) { errors.rejectValue("password", "required"); }
 	        }else { 
 	        	int x = 0;
@@ -40,7 +41,7 @@ public class LoginService {
 				    }
 	            }
 	            if (x == 0) {
-	                errors.rejectValue("s_email", "unique");
+	                errors.rejectValue("email", "unique");
 	            }else {         
 	    	
 	            }	

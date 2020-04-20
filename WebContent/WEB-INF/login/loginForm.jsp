@@ -51,9 +51,9 @@
 	<form:errors />
 	<p class="text-white-75 font-weight-light mb-5" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 학생 로그인  </p>
 	<p>
-		<label class="text-white-75 font-weight-light mb-5" for="s_email">&nbsp&nbsp 이메일 &nbsp&nbsp&nbsp</label>
-		<form:input path="s_email" />
-		<form:errors path="s_email" />
+		<label class="text-white-75 font-weight-light mb-5" for="email">&nbsp&nbsp 이메일 &nbsp&nbsp&nbsp</label>
+		<form:input path="email" />
+		<form:errors path="email" />
 	</p>
 	<p>
 		<label class="text-white-75 font-weight-light mb-5" for="password">&nbsp 비밀번호 &nbsp</label>

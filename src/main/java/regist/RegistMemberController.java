@@ -1,5 +1,7 @@
 package regist;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,15 +44,17 @@ public class RegistMemberController
     }
     
     @RequestMapping(method = { RequestMethod.POST })
-    public String submit(@ModelAttribute MemberInfo memberInfo, BindingResult result, Model model) {
+    public String submit(@ModelAttribute MemberInfo memberInfo, BindingResult result, Model model,HttpSession session) {
     	System.out.println("test : "+memberInfo);
         vali.validate(memberInfo, (Errors)result);
         if (result.hasErrors()) {
             return formViewName;
         }
         serv.insert(memberInfo);
+        
+		session.setAttribute("loginData",memberInfo);
        
-        return "student/s_regist/success";
+        return "forward:/index.jsp";
     }
 
 }

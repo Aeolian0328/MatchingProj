@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
 
+import login.LoginCommand;
 import regist_t.MemberInfo_t;
 
 @Service
@@ -18,19 +19,19 @@ public class LoginService_t {
 	private List<String> e;
 	    
 	    public List<String> getEmail() { return lDao.getEmail(); }
-	    public String getPassword(String t_email) { return lDao.getPassword(t_email);}
-	    public MemberInfo_t getMemberInfo(String t_email) { return lDao.getMemberInfo(t_email); }
+	    public String getPassword(String email) { return lDao.getPassword(email);}
+	    public MemberInfo_t getMemberInfo(String email) { return lDao.getMemberInfo(email); }
 	    
 	    public Errors checkEmail(Object target, Errors errors) {
 	    	
-	    	LoginCommand_t memberInfo= (LoginCommand_t)target;
+	    	LoginCommand memberInfo= (LoginCommand)target;
 	        
 	        e = getEmail();
-	        String t_email = memberInfo.getT_email();
+	        String t_email = memberInfo.getEmail();
 	        String password = memberInfo.getPassword();
 	        
 	        if (t_email.equals("")) { 
-	        	errors.rejectValue("t_email", "required");
+	        	errors.rejectValue("email", "required");
 	        	if(password.equals("")) { errors.rejectValue("password", "required"); }
 	        }else { 
 	        	int x = 0;
@@ -41,7 +42,7 @@ public class LoginService_t {
 				        if(!password.equals(t_compare)) { errors.rejectValue("password", "notSame"); }
 				    }
 	            }
-	            if (x == 0) { errors.rejectValue("t_email", "unique"); }
+	            if (x == 0) { errors.rejectValue("email", "unique"); }
 	        }
 	        return errors;
 	    }

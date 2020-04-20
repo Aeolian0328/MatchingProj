@@ -1,14 +1,15 @@
 package login;
 
 public class LoginCommand {
-	private String s_email;
+	private String email;
 	private String password;
 	
-	public String getS_email() {
-		return s_email;
+	
+	public String getEmail() {
+		return email;
 	}
-	public void setS_email(String s_email) {
-		this.s_email = s_email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;

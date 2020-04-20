@@ -13,6 +13,8 @@ import admin.Dao.StudentDto;
 import admin.Dao.TeacherDto;
 import admin.service.StudentService;
 import admin.service.TeacherService;
+import apply.model.SubjectDto;
+import apply.service.SubjectService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,12 +36,14 @@ public class adminController {
 	StudentService studentService;
 	@Autowired
 	TeacherService teacherService;
+	@Autowired
+	SubjectService subjectService;
 	
 	//첫 관리자 페이지
 	@RequestMapping(value = "admin.do", method = RequestMethod.GET)
 	public String administartor()
 	{
-		return "admin/adminform";
+		return "admin/adminIndex";
 	}
 	
 	//회원 관리
@@ -50,12 +54,12 @@ public class adminController {
 	}
 	
 	//학생 리스트
-	@RequestMapping(value = "studentList.do", method = RequestMethod.GET)
+	@RequestMapping(value = "adminStudentTables.do", method = RequestMethod.GET)
 	public String StudentList(Model sModel)
 	{
 		List<StudentDto> list = studentService.StudentList();
 		sModel.addAttribute("list", list);
-		return "admin/StudentList";
+		return "admin/StudentManager";
 	}
 	//선생 리스트
 	@RequestMapping(value = "teacherList.do", method = RequestMethod.GET)
@@ -86,7 +90,7 @@ public class adminController {
 	public String StudentDelete(int s_num)
 	{
 		studentService.Delete(s_num);
-		return "redirect:studentList.do";
+		return "redirect:adminStudentTables.do";
 	}
 	//선생 삭제
 	@RequestMapping(value = "TeacherDelete.do", method = RequestMethod.GET)
@@ -95,5 +99,9 @@ public class adminController {
 		teacherService.Delete(t_num);
 		return "redirect:teacherList.do";
 	}
+	
+	/*
+	 * public String SubjectList() { List<SubjectDto> list = subjectService. }
+	 */
 		
 }

@@ -21,6 +21,16 @@
 </property>
 </bean>
  -->
+ 
+ <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	<property name="definitions">
+		<list>
+			<value>/WEB-INF/tiles_def/tilesdef.xml</value>
+		</list>
+	</property>
+	<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory"/>
+</bean>
+ 
 <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
 <property name="maxUploadSize" value="50000000"/>
 </bean>
@@ -50,7 +60,7 @@
 		class="org.springframework.web.servlet.view.BeanNameViewResolver"
 		id="viewResolver1" 
 		/>
-
+	<bean id="tilesviewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
 	<!-- -->
 	<bean id="viewResolver2"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

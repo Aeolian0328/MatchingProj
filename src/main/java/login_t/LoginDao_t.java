@@ -8,6 +8,6 @@ import regist_t.MemberInfo_t;
 
 public class LoginDao_t extends SqlSessionDaoSupport {
 	public List<String> getEmail(){ return getSqlSession().selectList("regist.t_email"); }
-	public String getPassword(String t_email) { return getSqlSession().selectOne("regist.t_login",t_email); }
-	public MemberInfo_t getMemberInfo(String t_email) { return getSqlSession().selectOne("regist.t_loginData",t_email);}
+	public String getPassword(String email) { return getSqlSession().selectOne("regist.t_login",email); }
+	public MemberInfo_t getMemberInfo(String email) { return getSqlSession().selectOne("regist.t_loginData",email);}
 }

@@ -24,19 +24,19 @@ insert into teacher(name,password,t_email,t_phone,photo)
  </insert>
 
 <select id="s_login" resultType="string" parameterType="string">
-select password from student where s_email=#{s_email} 
+select password from student where s_email=#{email} 
 </select>
 
 <select id="t_login" resultType="string" parameterType="string">
-select password from teacher where t_email=#{t_email}
+select password from teacher where t_email=#{email}
  </select>
 
 <select id="loginData" resultType="regist.MemberInfo" parameterType="string">
-select * from student where s_email=#{s_email} 
+select * from student where s_email=#{email} 
 </select>
 
 <select id="t_loginData" resultType="regist_t.MemberInfo_t" parameterType="string">
-select * from teacher where t_email=#{t_email} 
+select * from teacher where t_email=#{email} 
 </select>
 
 <insert id="photoInsert" parameterType="regist.PhotoDto">
