@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import apply.model.RankDto;
 import apply.model.SubjectDto;
 
 public class SubjectDao extends SqlSessionDaoSupport{
@@ -82,6 +83,13 @@ public class SubjectDao extends SqlSessionDaoSupport{
 		}
 		return n;
 	}
+	
+	
+	public List<SubjectDto> allselect(){
+		return getSqlSession().selectList("subject.all");
+	}
+	
+	
 	
 
 	
