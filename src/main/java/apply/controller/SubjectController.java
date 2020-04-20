@@ -64,7 +64,7 @@ public class SubjectController {
 	public Map<String, Object> countup(SubjectDto s) throws Exception {
 		Map<String, Object> map =  new HashMap<String, Object>();	
 		String message = null ;
-		
+
 		sub.create(s);
 		int ck = sub.s_enroll(s);
 		if(ck==1) {

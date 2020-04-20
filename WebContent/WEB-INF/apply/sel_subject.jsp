@@ -56,36 +56,52 @@ function msg_time() {
 
 function apply(){
 
-	var start = $('#start').text();
-	var now = new Date().getTime();
-	
-	var start_time = new Date(start).getTime();
-	if(now<start_time){
 
-
-	    var sub=$("#sub").text();
-//	     var sub="aaa";
-		var url="count.do";
-//	 	var params="subjectName="+sub;
-	    var params="subjectName="+sub+"&"+"s_email=bbb@naver.com"
-		 $.ajax({
-			type:"post"
-			,url:url	
-			,data:params
-			,dataType:"json"})
-			.done(function(map){
-
-			alert(map.message);
-			history.go(-1);
-			})
-
-
-			
+	if("${loginData.s_email}"==""){
+			alert("로그인이 필요합니다.");
+			document.location.href="LoginStudent.do";
 		}
+
 	else{
-	alert("신청기간이 지났습니다.")
-	history.go(-1);
+
+		
+		var start = $('#start').text();
+		var now = new Date().getTime();
+		
+		var start_time = new Date(start).getTime();
+		
+		if(now<start_time){
+
+
+		    var sub=$("#sub").text();
+//		     var sub="aaa";
+			var url="count.do";
+//		 	var params="subjectName="+sub;
+
+		    var params="subjectName="+sub+"&"+"s_email=${loginData.s_email}" 
+			 $.ajax({
+				type:"post"
+				,url:url	
+				,data:params
+				,dataType:"json"})
+				.done(function(map){
+
+				alert(map.message);
+				history.go(-1);
+				})
+			}
+		
+		else{
+		alert("신청기간이 지났습니다.")
+		history.go(-1);
+			}
+
+
 		}
+
+
+
+
 	
 
 }
