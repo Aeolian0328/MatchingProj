@@ -60,7 +60,7 @@ function apply(){
 	var now = new Date().getTime();
 	
 	var start_time = new Date(start).getTime();
-	if(now>=start_time){
+	if(now<start_time){
 
 
 	    var sub=$("#sub").text();
@@ -83,7 +83,7 @@ function apply(){
 			
 		}
 	else{
-	alert("수강신청 시작일이 아직 아닙니다.")
+	alert("신청기간이 지났습니다.")
 	history.go(-1);
 		}
 	
