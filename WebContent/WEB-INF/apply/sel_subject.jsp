@@ -55,23 +55,39 @@ function msg_time() {
 }
 
 function apply(){
-	
-    var sub=$("#sub").text();
-//     var sub="aaa";
-	var url="count.do";
-// 	var params="subjectName="+sub;
-    var params="subjectName="+sub+"&"+"s_email=bbb@naver.com"
-	 $.ajax({
-		type:"post"
-		,url:url	
-		,data:params
-		,dataType:"json"})
-		.done(function(map){
 
-		alert(map.message);
-		history.go(-1);
-		})
-		
+	var start = $('#start').text();
+	var now = new Date().getTime();
+	
+	var start_time = new Date(start).getTime();
+	if(now>=start_time){
+
+
+	    var sub=$("#sub").text();
+//	     var sub="aaa";
+		var url="count.do";
+//	 	var params="subjectName="+sub;
+	    var params="subjectName="+sub+"&"+"s_email=bbb@naver.com"
+		 $.ajax({
+			type:"post"
+			,url:url	
+			,data:params
+			,dataType:"json"})
+			.done(function(map){
+
+			alert(map.message);
+			history.go(-1);
+			})
+
+
+			
+		}
+	else{
+	alert("수강신청 시작일이 아직 아닙니다.")
+	history.go(-1);
+		}
+	
+
 }
 
 
