@@ -1,8 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
 <%@ page session="true" %>
-
-
-<!DOCTYPE html> 
+ 
 <head>
 
   <meta charset="utf-8">
@@ -18,8 +16,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css"/>
-
-</head>
 
   <!-- 자동 -(하이픈) 생성 -->
 <script>
@@ -65,14 +61,14 @@ function inputPhoneNumber(obj) {
 
 <body id="page-top">
 
-<input type="hidden" value="${t_email}"/>
+<!-- 선생님 아이디 정보 가져오기 -->
+<input type="hidden" id="t_email" value="${t_email}"/>
  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Matching</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -90,7 +86,7 @@ function inputPhoneNumber(obj) {
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="img/smileDarkgray.svg" alt="">
+      <img class="masthead-avatar mb-5" src="img/subject/smileDarkgray.svg" alt="">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">강좌 등록</h1>
@@ -121,7 +117,7 @@ function inputPhoneNumber(obj) {
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <form name="sentMessage" id="contactForm" novalidate="novalidate">
+          <!-- <form name="sentMessage" id="contactForm" novalidate="novalidate"> -->
 
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -131,35 +127,9 @@ function inputPhoneNumber(obj) {
               </div>
             </div>
             
-            <!-- 선생님 정보 -->
-            <!-- <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>이름</label>
-                <input class="form-control" id="name" name="name" type="text" placeholder="이름" required="required" data-validation-required-message="이름을 입력해주세요.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            
-             <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>핸드폰 번호</label>
-                <input class="form-control" id="t_phone" name="t_phone" type="tel" placeholder="핸드폰 번호" required="required" data-validation-required-message="핸드폰 번호를 입력해주세요." onKeyup="inputPhoneNumber(this);" maxlength="13">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            
-              <div class="control-group">
-              <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>이메일 주소</label>
-                <input class="form-control" id="t_email" name="t_email" type="email" placeholder="이메일 주소" required="required" data-validation-required-message="이메일 주소를 입력해주세요.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div> -->
-            
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>시작일</label>
-
     <div class="container">
     <div class="row">
         <div class="col-sm-6">
@@ -172,13 +142,6 @@ function inputPhoneNumber(obj) {
                 </div>
             </div>
         </div>
-      <!--   <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker2').datetimepicker({
-                    locale: 'ko'
-                });
-            });
-        </script> -->
     </div>
 </div>
 			<p class="help-block text-danger"></p>
@@ -201,14 +164,6 @@ function inputPhoneNumber(obj) {
                 </div>
             </div>
         </div>
-       <!--  <script>
-            $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    locale: 'ko'
-                });
-            });    
- 
-        </script> -->
     </div>
 </div>
                 <p class="help-block text-danger"></p>
@@ -234,7 +189,7 @@ function inputPhoneNumber(obj) {
             
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>강의 내용용</label>
+                <label>강의 내용</label>
                 <textarea class="form-control" id="content" name="content" rows="5" placeholder="강의 내용" required="required" data-validation-required-message="강의 내용을 입력해주세요."></textarea>
                 <p class="help-block text-danger"></p>
               </div>
@@ -256,10 +211,9 @@ function inputPhoneNumber(obj) {
             <div class="form-group">
               <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">확인</button>
             </div>
-          </form>
+          <!-- </form> -->
         </div>
       </div>
-
     </div>
   </section>
 </form>

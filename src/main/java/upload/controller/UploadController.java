@@ -96,7 +96,7 @@ public class UploadController {
 	        filename=file.getOriginalFilename();  
 	        path1 = "C:\\Users\\Administrator\\git\\Matching\\projectUploader\\WebContent\\img\\subject";
 	        barr=file.getBytes();  
-	    return new ModelAndView("upload-success","filename",path1+"/"+filename);  //view name / model name / model data
+	    return new ModelAndView("uploader/upload-success","filename",path1+"/"+filename);  //view name / model name / model data
 	}
 	
 	// 이미지 첨부 (확인을 눌렀을 경우 DB로 전송)
