@@ -55,6 +55,10 @@
         	background-color: rgb(0,0,0);
         	background-color: rgba(0,0,0,0.4);
         }
+        .mordal
+        {
+        }
+
         </style>
     </head>
     
@@ -88,6 +92,8 @@
                     <div class="col-lg-10 align-self-end">
                         <h1 class="text-uppercase text-white font-weight-bold">Matching Teacher Student</h1>
                         
+                        
+ 
                         <!-- 상엽 -->
                         <a href= "RegistStudent.do" >학생 회원가입</a><br>
 	<a href="RegistTeacher.do">선생님 회원가입</a><br><br>
@@ -97,16 +103,12 @@
 	
 	<a href="upload.do">강좌 업로드</a><br>	
 	
-	<c:if test = "${loginData.name eq '관리자' || loginData_t.name eq '관리자'}">
-		<a href="admin.do">관리자 페이지</a><br>
-	</c:if>
+	<!-- <c:if test = "${loginData.name eq '관리자' || loginData_t.name eq '관리자'}">
 	
+	</c:if> -->
+	<a href="admin.do">관리자 페이지</a><br>
 	<a href="test.jsp"> session에 저장한 값 저장 되었는지 test</a> <br>
 	<a href="index1.do"> 수강신청 및 차트</a>
-	
-	
-	
-	
 	
                         <hr class="divider my-4" />
                     </div>

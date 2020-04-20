@@ -28,7 +28,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class adminController {
 	
 	public adminController() {
-		System.out.println("생성자");
 	}
 	
 	@Autowired
@@ -58,7 +57,7 @@ public class adminController {
 		sModel.addAttribute("list", list);
 		return "admin/StudentList";
 	}
-	
+	//선생 리스트
 	@RequestMapping(value = "teacherList.do", method = RequestMethod.GET)
 	public String TeacherList(Model tModel)
 	{
@@ -66,7 +65,7 @@ public class adminController {
 		tModel.addAttribute("list", list);
 		return "admin/TeacherList";
 	}
-	
+	//학생 엑셀뽑기
 	@RequestMapping(value = "StudentExport.do", method = RequestMethod.GET)
 	 public ModelAndView StudentExcelDownloader(){
 		  
@@ -74,7 +73,7 @@ public class adminController {
 		  
 		  return new ModelAndView("StudentExcel","pageRanks",list);
 	  }
-	
+	//선생 엑셀 뽑기
 	@RequestMapping(value = "TeacherExport.do", method = RequestMethod.GET)
 	 public ModelAndView TeacherExcelDownloader(){
 		  System.out.println("선생엑셀 다운로드");
@@ -82,13 +81,14 @@ public class adminController {
 		  
 		  return new ModelAndView("TeacherExcel","pageRanks",list);
 	  }
+	//학생 삭제
 	@RequestMapping(value = "StudentDelete.do", method = RequestMethod.GET)
 	public String StudentDelete(int s_num)
 	{
 		studentService.Delete(s_num);
 		return "redirect:studentList.do";
 	}
-	
+	//선생 삭제
 	@RequestMapping(value = "TeacherDelete.do", method = RequestMethod.GET)
 	public String TeacherDelete(int t_num)
 	{
