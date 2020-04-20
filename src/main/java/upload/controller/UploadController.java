@@ -30,8 +30,8 @@ public class UploadController {
 	
 	// 업로드 양식 불러오기(index)
 	@RequestMapping(value = "upload.do", method = RequestMethod.GET)
-	public String form() {
-		System.out.println("컨트롤러 들어옴");
+	public String form(HttpSession session) {
+		session.getAttribute("t_email");
 		return "uploader/enroll";
 	}
 	

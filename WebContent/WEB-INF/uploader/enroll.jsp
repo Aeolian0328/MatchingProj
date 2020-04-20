@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
+<%@ page session="true" %>
+
 
 <!DOCTYPE html> 
 <head>
@@ -63,6 +65,7 @@ function inputPhoneNumber(obj) {
 
 <body id="page-top">
 
+<input type="hidden" value="${t_email}"/>
  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -156,27 +159,26 @@ function inputPhoneNumber(obj) {
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>시작일</label>
-                <!-- <input class="form-control" id="startTime" name="startTime" placeholder="시작일" required="required" data-validation-required-message="시작일을 입력해주세요."> -->
 
     <div class="container">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" name="startTime" data-target="#datetimepicker2"/>
+                    <input type="text" class="form-control datetimepicker-input" name="startTime" data-target="#datetimepicker2" placeholder="시작일"/>
                     <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
+      <!--   <script type="text/javascript">
             $(function () {
                 $('#datetimepicker2').datetimepicker({
                     locale: 'ko'
                 });
             });
-        </script>
+        </script> -->
     </div>
 </div>
 			<p class="help-block text-danger"></p>
@@ -186,28 +188,27 @@ function inputPhoneNumber(obj) {
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>종료일</label>
-                <!-- <input class="form-control" id="endTime" name="endTime" placeholder="종료일" required="required" data-validation-required-message="종료일을 입력해주세요."> -->
                 
                 <div class="container">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
                 <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" name="endTime" data-target="#datetimepicker3"/>
+                    <input type="text" class="form-control datetimepicker-input" name="endTime" data-target="#datetimepicker3" placeholder="종료일"/>
                     <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
+       <!--  <script>
             $(function () {
                 $('#datetimepicker3').datetimepicker({
                     locale: 'ko'
                 });
             });    
  
-        </script>
+        </script> -->
     </div>
 </div>
                 <p class="help-block text-danger"></p>
@@ -225,7 +226,7 @@ function inputPhoneNumber(obj) {
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/smileDarkgray.svg" alt="">
+            <img class="img-fluid" src="img/subject/smileDarkgray.svg" alt="">
           </div>
         </div>
               </div>
@@ -300,7 +301,7 @@ function inputPhoneNumber(obj) {
                 </div>
                 
                 <!-- Upload Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/smileDarkgray.svg" alt="">
+                <img class="img-fluid rounded mb-5" src="img/subject/smileDarkgray.svg" alt="">
                 
                 <!-- Upload Modal - Text -->
                 <p class="mb-5">이미지를 첨부해주세요. (.jpg만 가능)</p>
