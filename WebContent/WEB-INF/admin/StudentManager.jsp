@@ -77,12 +77,12 @@ function deleteStudent(s_num)
           <span>Teacher-Manager</span></a>
       </li>
       
-       <li class="nav-item active">
-        <a class="nav-link" href="adminTeacherTables.do">
+      <li class="nav-item active">
+        <a class="nav-link" href="adminSubjectTables.do">
           <i class="fas fa-fw fa-table"></i>
-          <span>r</span></a>
+          <span>Subject-Manager</span></a>
       </li>
-      
+       
       
 
       <!-- Divider -->
@@ -251,6 +251,7 @@ function deleteStudent(s_num)
                       <th>회원 이메일</th>
                       <th>전화 번호</th>
                       <th>회원 태그</th>
+                      <th>삭제</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -262,6 +263,7 @@ function deleteStudent(s_num)
      			 <td>${StudentDto.name}</td>
     			  <td>${StudentDto.s_email}</td>
      			 <td>${StudentDto.s_phone}</td>
+     			 <td>${StudentDto.s_tag}</td>
      			 <td><input type = "button" id = "delete" onclick = "deleteStudent(${StudentDto.s_num})" value = "삭제"><td/>
    				 </tr>
  				</tbody>

@@ -77,6 +77,12 @@ function deleteStudent(s_num)
           <span>Teacher-Manager</span></a>
       </li>
       
+       <li class="nav-item active">
+        <a class="nav-link" href="adminSubjectTables.do">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Teacher-Manager</span></a>
+      </li>
+      
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
