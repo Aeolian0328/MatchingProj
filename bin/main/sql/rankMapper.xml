@@ -14,21 +14,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from graph where month = #{month} 
 	</select>
 	
-	<select id="month" resultType="apply.model.RankDto" parameterType="String">
+	<select id="month" resultType="apply.model.SubjectDto" parameterType="String">
 	
 	select *
-from graph
-where month = #{month3}
-order by nu_count desc
-limit 5;
+from subject
+where startTime like CONCAT (#{month3},'%')
+order by studentCount desc
+limit 5
 
 	</select>
 	
-	<select id="use" resultType="apply.model.RankDto" parameterType="String">
-select month, sum(nu_count) as sum
-from graph
-group by month 
-having month like CONCAT(#{year},'%');
+	<select id="use" resultType="apply.model.SubjectDto" parameterType="String">
+select startTime, sum(studentCount) as sum
+from subject
+where startTime like CONCAT(#{year},'%')
 	</select>
 
 	<select id="radar" resultType="apply.model.SubjectDto">
@@ -37,11 +36,10 @@ from subject;
 	</select>
 	
 	
-		<select id="user_hap" resultType="apply.model.RankDto" parameterType="String">
-select g.subject, sum(g.nu_count) as sum
-from graph g,subject s
-where g.subject = s.subjectName
-and s.subjecttag = #{user_hap_total}
+		<select id="user_hap" resultType="apply.model.SubjectDto" parameterType="String">
+select subjecttag, sum(studentCount) as sum
+from subject
+where subjecttag =#{user_hap_total}
 
 	</select>
 

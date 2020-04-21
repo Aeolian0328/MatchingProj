@@ -26,4 +26,28 @@
 	<definition name="board/list" extends="base_layout">		
 		<put-attribute name="body" value="/WEB-INF/board/list.jsp" />
 	</definition>
+	
+	<definition name="uploader/enroll" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/uploader/enroll.jsp" />
+	</definition>
+	
+	<definition name="apply/sel_subject" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/apply/sel_subject.jsp" />
+	</definition>
+	
+		<definition name="apply/list" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/apply/list.jsp" />
+	</definition>
+	
+		<definition name="dist/index.html" extends="base_layout">		
+		<put-attribute name="body" value="/dist/index.html" />
+	</definition>
+	
+
+	
+	
+	
+	
+	
+	
 </tiles-definitions>
