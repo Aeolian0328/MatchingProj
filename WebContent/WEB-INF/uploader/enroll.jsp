@@ -141,7 +141,8 @@ function inputPhoneNumber(obj) {
 <form method="post" action="insert.do">
 
 <!-- 선생님 아이디 정보 가져오기 -->
-<input type="hidden" id="t_email" value="${t_email}"/>
+
+<input type="hidden" id="t_email" name="t_email" value="${loginData.t_email}"/>
 
   <!-- Upload Section -->
   <section class="page-section" id="contact">

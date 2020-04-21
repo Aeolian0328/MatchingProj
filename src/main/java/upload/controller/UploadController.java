@@ -36,9 +36,7 @@ public class UploadController {
 
 	// 업로드 양식 불러오기(index)
 	@RequestMapping(value = "upload.do", method = RequestMethod.GET)
-	public String form(HttpSession session) {
-		session.getAttribute("t_email");
-		System.out.println(session.getAttribute("t_email"));
+	public String form() {
 		return "uploader/enroll";
 	}
 	
@@ -48,7 +46,6 @@ public class UploadController {
 	  public @ResponseBody String check(@ModelAttribute("ck") UploadDto ck , Model model) throws Exception
 	  
 	  { 
-	
 		  int result = service.subjectCheck(ck.getSubjectName()); 
 		  System.out.println(result);
 		  return String.valueOf(result); 
@@ -75,6 +72,8 @@ public class UploadController {
 	// DB에 값 보내기 + 날짜 형식 변경
 	@RequestMapping(value = "insert.do", method = RequestMethod.POST)
 	public String insert(@ModelAttribute("insert") UploadDto dto) {
+
+			
 			sendData();
 
 			String str = dto.getStartTime();
