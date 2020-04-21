@@ -48,6 +48,11 @@ public class LoginController {
 		String s_email=loginCommand.getEmail();
 		MemberInfo loginData=serv.getMemberInfo(s_email);
 		session.setAttribute("loginData",loginData);
+		if(s_email.equals("admin@admin"))
+		{
+			return "admin/adminform";
+		}
+		
 		
 		return "index";
 		/*

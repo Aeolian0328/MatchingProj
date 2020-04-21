@@ -35,6 +35,10 @@ public class LoginController_t {
 		session.setAttribute("loginData",loginData);
 		
 		session.setAttribute("loginData",loginData);
+		if(t_email.equals("admin@admin"))
+		{
+			return "admin/adminform";
+		}	
 		return "index";
 	}
 }

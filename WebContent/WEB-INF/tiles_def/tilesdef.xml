@@ -26,4 +26,6 @@
 	<definition name="board/list" extends="base_layout">		
 		<put-attribute name="body" value="/WEB-INF/board/list.jsp" />
 	</definition>
+	
+	
 </tiles-definitions>

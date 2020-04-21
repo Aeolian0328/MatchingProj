@@ -42,7 +42,7 @@ t_email varchar(20) references teacher(t_email),/*선생님 이메일*/
 s_email varchar(20) references student(s_email),/*학생 이메일*/
 studentCount int(20),/*학생 수*/
 subjectScore int(5),/* 평점(자동계산) */
-confirmed boolean
+confirmed int default 0
 );
 
 create table photo_name(
@@ -50,8 +50,10 @@ photo varchar(30) primary key,
 photo_name varchar(20)
 );
 
+use matching;
 select * from student;
 select * from teacher;
+select * from photo_name;
 
 insert into photo_name values('0','0');
 
