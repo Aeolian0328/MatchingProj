@@ -16,6 +16,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css"/>
+
             
 <!-- 강의명 중복 검사 -->
 <script>
@@ -139,7 +140,7 @@ function inputPhoneNumber(obj) {
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>시작일</label>
-    <div class="container">
+<!--     <div class="container">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
@@ -153,6 +154,19 @@ function inputPhoneNumber(obj) {
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="text" class="form-control datetimepicker-input" id="datetimepicker5" name="startTime" placeholder="시작일" data-toggle="datetimepicker" data-target="#datetimepicker5"/>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker5').datetimepicker();
+            });
+        </script>
+    </div>
 </div>
 			<p class="help-block text-danger"></p>
 			 </div> 
@@ -161,19 +175,16 @@ function inputPhoneNumber(obj) {
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>종료일</label>
-                
-                <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <div class="form-group">
-                <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" name="endTime" data-target="#datetimepicker3" placeholder="종료일"/>
-                    <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                    </div>
-                </div>
-            </div>
+            <input type="text" class="form-control datetimepicker-input" id="datetimepicker6" name="endTime" placeholder="종료일" data-toggle="datetimepicker" data-target="#datetimepicker6"/>
         </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker6').datetimepicker();
+            });
+        </script>
     </div>
 </div>
                 <p class="help-block text-danger"></p>
