@@ -87,16 +87,11 @@
                         <h1 class="text-uppercase text-white font-weight-bold">Matching Teacher Student</h1>
               
      
-	<a href="upload.do">강좌 업로드</a><br>	
-	
 	<c:if test = "${loginData.name eq '관리자' || loginData_t.name eq '관리자'}">
 		<a href="admin.do">관리자 페이지</a><br>
 	</c:if>
 	
-	<a href="index1.do"> 수강신청 및 차트</a>
-	
-	
-	
+
 	     
 <div class="container-fluid">
 	<div class="row">
