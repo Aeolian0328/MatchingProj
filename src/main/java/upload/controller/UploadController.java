@@ -1,9 +1,14 @@
 package upload.controller;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URL;
 
-
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +22,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import upload.service.*;
+import upload.service.UploadDto;
+import upload.service.UploadService;
 
 @Controller
 public class UploadController {
 
 	String filename;
 	String path1;
+	String path2;
     byte barr[] = new byte[100];
 	 
 	@Autowired
@@ -108,7 +115,9 @@ public class UploadController {
 		//String path=session.getServletContext().getRealPath("/");  
 	        filename=file.getOriginalFilename();  
 	        path1 = "C:\\Users\\Administrator\\Documents\\MatchingProj\\WebContent\\img\\sub_img";
-	        barr=file.getBytes();  
+	        barr=file.getBytes();
+	        
+	       
 	    return new ModelAndView("uploader/upload-success","filename",path1+"/"+filename);  //view name / model name / model data
 	}
 	
@@ -122,7 +131,57 @@ public class UploadController {
         bout.write(barr);  
         bout.flush();  
         bout.close();  
+        
+//        storeData();
           
         } catch(Exception e){System.out.println(e);}  	
 	}
+	
+	
+	
+//	public void storeData() {
+//		
+//		  path2 = "file:///C:/Users/Administrator/Documents/MatchingProj/WebContent/img/sub_img";
+//		  
+//		 try {
+//		  	  String imagePath = path2+"/"+filename;
+//		        BufferedImage image = null;
+//		        
+//		 	 //이미지를 읽어와서 BufferedImage에 넣는다.
+//		     
+//		      image = ImageIO.read(new URL(imagePath));
+//		      
+//		      
+//		      
+//		      int width = image.getWidth();
+//		      int height = image.getHeight();
+//		       
+//		      //파일명 자르기
+//		      String fileNm = imagePath.substring(imagePath.lastIndexOf("/") + 1);
+//		      System.out.println(fileNm);
+//		      // 저장할 이미지의 크기와 타입을 잡아줌.
+//		      BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_BGR);
+//		      bufferedImage.createGraphics().drawImage(image,300,400,this);	            
+//		   
+//		      
+//		      // 해당경로에 이미지를 저장함.
+//		      ImageIO.write(bufferedImage, "jpg", new File(path2 + filename));
+//		  } catch(Exception e) {
+//		      e.printStackTrace();
+//		  }
+//		
+//	}
+//
+//	@Override
+//	public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
+	
+   
+  
+	
+	
+	
+	
 }
