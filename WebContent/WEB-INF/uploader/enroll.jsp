@@ -20,6 +20,7 @@
             <!-- 유효성 검사 -->
 <script>
 function checkSubject(){
+	alert("ㅇㅅㅇ");
     var id = $('#subjectName').val();
     $.ajax({
         url:'/checkSubject.do',
@@ -88,7 +89,7 @@ function inputPhoneNumber(obj) {
   <title>Upload page</title>
 
   <!-- Custom fonts for this theme -->
-  <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -166,6 +167,7 @@ function inputPhoneNumber(obj) {
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>과목명</label>
                 <input class="form-control" id="subjectName" name="subjectName" type="text" placeholder="과목명" required="required" onkeyup="checkSubject()" data-validation-required-message="과목명을 입력해주세요.">
+                <input type="button" onclick="checkSubject()"/>
                 <span id="chkMsg"></span>
                 <p class="help-block text-danger"></p>
               </div>
