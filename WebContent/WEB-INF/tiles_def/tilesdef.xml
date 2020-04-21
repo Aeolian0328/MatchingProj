@@ -39,8 +39,6 @@
 		<put-attribute name="body" value="/WEB-INF/apply/list.jsp" />
 	</definition>
 	
-		<definition name="dist/index.html" extends="base_layout">		
-		<put-attribute name="body" value="/dist/index.html" />
-	</definition>
+
 	
 </tiles-definitions>
