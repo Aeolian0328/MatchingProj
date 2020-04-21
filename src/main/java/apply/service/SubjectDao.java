@@ -89,6 +89,11 @@ public class SubjectDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("subject.all");
 	}
 	
+	public List<SubjectDto> unConfirmed()
+	{
+		return getSqlSession().selectList("subject.unConfirmed");
+	}
+	
 	
 	
 

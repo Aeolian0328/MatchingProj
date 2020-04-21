@@ -11,7 +11,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from subject
 	</select>
 	
-	
+	<select id = "unConfirmed" resultType="apply.model.SubjectDto">
+		select * from subject where confirmed = 0
+	</select>
 	<select id="finish_all" resultType="apply.model.SubjectDto" parameterType="String">
 		select * from subject 
 		where
