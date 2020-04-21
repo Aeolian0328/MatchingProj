@@ -191,7 +191,7 @@ public class RankController {
 		System.out.println("출력"+user_hap_total);
 		
 		
-		System.out.println(month3_sub);
+		System.out.println("m"+month3_sub);
 		System.out.println(month2_sub);
 		System.out.println(month1_sub);
 		
