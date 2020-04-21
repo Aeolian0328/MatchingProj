@@ -62,13 +62,21 @@ public class adminController {
 		return "admin/StudentManager";
 	}
 	//선생 리스트
-	@RequestMapping(value = "teacherList.do", method = RequestMethod.GET)
+	@RequestMapping(value = "adminTeacherTables.do", method = RequestMethod.GET)
 	public String TeacherList(Model tModel)
 	{
 		List<TeacherDto> list = teacherService.TeacherList();
 		tModel.addAttribute("list", list);
-		return "admin/TeacherList";
+		return "admin/TeacherManager";
 	}
+	
+	public  String SubjectList(Model tModel)
+	{
+		
+		return "admin/SubjectManager";
+	}
+	
+	
 	//학생 엑셀뽑기
 	@RequestMapping(value = "StudentExport.do", method = RequestMethod.GET)
 	 public ModelAndView StudentExcelDownloader(){

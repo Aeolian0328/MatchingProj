@@ -54,9 +54,14 @@
       </li>
       
         <li class="nav-item active">
-        <a class="nav-link" href="admin.do">
+        <a class="nav-link" href="adminStudentTables.do">
           <i class="fas fa-fw fa-table"></i>
           <span>Teacher-Manager</span></a>
+      </li>
+         <li class="nav-item active">
+        <a class="nav-link" href="adminSubjectTables.do">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Subject-Manager</span></a>
       </li>
       
 
