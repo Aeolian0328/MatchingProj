@@ -71,7 +71,7 @@ background-color:rgba(0,0,0,0.4);
 <body id="page-top">
 
  <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+<!--         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="http://localhost:8082/Matching/index.jsp">MatchingService</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -88,7 +88,7 @@ background-color:rgba(0,0,0,0.4);
 
 
 
-
+ -->
 <!-- 내용 -->
 <!-- Masthead-->
 <header class="masthead">

@@ -22,6 +22,15 @@
 </bean>
  -->
  
+ <!-- beanNameViewResolver -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" id="viewResolver1" />
+	<bean id="tilesviewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
+	<!-- -->
+	<bean id="viewResolver2" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/"/>
+		<property name="suffix" value=".jsp" />
+	</bean>
+ 
  <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 	<property name="definitions">
 		<list>
@@ -55,18 +64,7 @@
 		admin.*,apply.*,upload.*;" 
 		/>
 
-	<!-- beanNameViewResolver -->
-	<bean
-		class="org.springframework.web.servlet.view.BeanNameViewResolver"
-		id="viewResolver1" 
-		/>
-	<bean id="tilesviewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"/>
-	<!-- -->
-	<bean id="viewResolver2"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/"/>
-		<property name="suffix" value=".jsp" />
-	</bean>
+	
 	
 	<bean id="StudentExcel" class="admin.download.StudentDownLoader"/>
 	<bean id="TeacherExcel" class="admin.download.TeacherDownLoader"/>

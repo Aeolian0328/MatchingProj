@@ -18,7 +18,7 @@ public class RegistMemberController_t
     private RegistService_t serv;
     @Autowired
     private MemberInfoValidator_t vali;
-    private String formViewName = "teacher/t_regist/memberForm_t";;
+    private String formViewName = "memberForm_t";;
     
     public void setServ(RegistService_t serv) {
         this.serv = serv;
@@ -48,6 +48,6 @@ public class RegistMemberController_t
         
         session.setAttribute("loginData",memberInfo);
         
-        return "forward:/index.jsp";
+        return "index";
     }
 }

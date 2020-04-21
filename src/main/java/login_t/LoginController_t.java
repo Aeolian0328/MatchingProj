@@ -28,13 +28,13 @@ public class LoginController_t {
 	public String submit(LoginCommand loginCommand,BindingResult result, HttpSession session){
 		vali.validate(loginCommand,result);
 		if(result.hasErrors()) {
-			return "login/loginSelect";
+			return "loginSelect";
 		}
 		String t_email=loginCommand.getEmail();
 		MemberInfo_t loginData=serv.getMemberInfo(t_email);
 		session.setAttribute("loginData",loginData);
 		
 		session.setAttribute("loginData",loginData);
-		return "forward:/index.jsp";
+		return "index";
 	}
 }

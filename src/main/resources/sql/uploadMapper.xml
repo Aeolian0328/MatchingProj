@@ -6,18 +6,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 <mapper namespace="upload">
-
-	<insert id="insert" parameterType="upload.service.UploadDto">
-		insert into subject(subjectName, startTime, endTime, content, subjectImage, cost, subjecttag, t_email)
-		values(#{subjectName}, #{startTime}, #{endTime}, #{content}, #{subjectImage}, #{cost}, #{subjecttag}, #{t_email})
-	</insert>
 	
-<!-- 	<select id = "check" parameterType = "String" resultType = "int">
-    SELECT COUNT(*) FROM subject WHERE subjectName = #{subjectName}
-</select> -->
-
-<select id = "check" parameterType = "String" resultType = "int">
-    SELECT COUNT(*) FROM subject WHERE subjectName = #{subjectName}
-</select>
+	<!-- <select id="one" resultType="spring.model.SubjectDto" parameterType="String">
+		select * from subject where subjectName=#{a}
+	</select> -->
+	
+	<insert id="insert" parameterType="apply.model.SubjectDto">
+		insert into subject(subjectName, startTime, endTime, content, subjectImage, cost, subjecttag)
+		values(#{subjectName}, #{startTime}, #{endTime}, #{content}, #{subjectImage}, #{cost}, #{subjecttag})
+	</insert>
 	
 </mapper>

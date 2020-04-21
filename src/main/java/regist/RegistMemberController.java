@@ -30,7 +30,7 @@ public class RegistMemberController
     private String formViewName;
     
     public RegistMemberController() {
-        formViewName = "student/s_regist/memberForm";
+        formViewName = "memberForm";
     }
     
     @ModelAttribute
@@ -54,7 +54,7 @@ public class RegistMemberController
         
 		session.setAttribute("loginData",memberInfo);
        
-        return "forward:/index.jsp";
+        return "index";
     }
 
 }

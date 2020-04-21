@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping( "/RegistSelect.do" )
-public class RegistSelect
+public class RegistSelectCont
 {
 
     private String formViewName;
     
-    public RegistSelect() {
-        formViewName = "student/s_regist/registSelect";
+    public RegistSelectCont() {
+        formViewName = "registSelect";
     }
     
     @ModelAttribute

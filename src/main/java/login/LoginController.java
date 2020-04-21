@@ -43,13 +43,13 @@ public class LoginController {
 		System.out.println("컨트롤러::"+loginCommand.getEmail());
 		vali.validate(loginCommand,result);
 		if(result.hasErrors()) {
-			return "login/loginSelect";
+			return "loginSelect";
 		}
 		String s_email=loginCommand.getEmail();
 		MemberInfo loginData=serv.getMemberInfo(s_email);
 		session.setAttribute("loginData",loginData);
 		
-		return "forward:/index.jsp";
+		return "index";
 		/*
 		 * Cookie c = createCookie("nowLogin",e,req.getContextPath()); res.addCookie(c);
 		 */
