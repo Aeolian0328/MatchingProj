@@ -49,6 +49,11 @@ public class SubjectService {
 		return dao.allselect();
 	}
 	
+	public List<SubjectDto> unConfirmed()
+	{
+		return dao.unConfirmed();
+	}
+	
 
 
 

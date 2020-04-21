@@ -246,22 +246,33 @@ function deleteStudent(s_num)
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>회원 번호</th>
-                      <th>회원 이름</th>
-                      <th>회원 이메일</th>
-                      <th>전화 번호</th>
-                      <th>회원 태그</th>
+                      <th>강좌 번호</th>
+                      <th>강좌 명</th>
+                      <th>개강 날짜</th>
+                      <th>종강 날짜</th>
+                      <th>과목 개요</th>
+                      <th>수강료</th>
+                      <th>분류</th>
+                      <th>강사 이메일</th>
+                      <th>학생 수</th>
+                      <th>평점</th>
                       <th></th>
                     </tr>
                   </thead>
                 
-                 <c:forEach var="StudentDto" items="${list}">
+                 <c:forEach var="SubjectDto" items="${list}">
  				<tbody>
    				 <tr class="table-secondary">
-    			  <td>${StudentDto.s_num}</td>
-     			 <td>${StudentDto.name}</td>
-    			  <td>${StudentDto.s_email}</td>
-     			 <td>${StudentDto.s_phone}</td>
+    			  <td>${SubjectDto.subjectNum}</td>
+     			 <td>${SubjectDto.subjectName}</td>
+    			  <td>${SubjectDto.startTime}</td>
+     			 <td>${SubjectDto.endTime}</td>
+     			 <td>${SubjectDto.content}</td>
+     			 <td>${SubjectDto.cost}</td>
+     			 <td>${SubjectDto.subjecttag}</td>
+     			 <td>${SubjectDto.t_email}</td>
+     			 <td>${SubjectDto.studentCount}</td>
+     			 <td>${SubjectDto.subjectScore}</td>
      			 <td><input type = "button" id = "delete" onclick = "deleteStudent(${StudentDto.s_num})" value = "삭제"><td/>
    				 </tr>
  				</tbody>

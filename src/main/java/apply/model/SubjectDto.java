@@ -18,8 +18,15 @@ public class SubjectDto {
 	private int studentCount;
 	private int subjectScore;
 	private int sum;
+	private int confirmed;
 	
 	
+	public int getConfirmed() {
+		return confirmed;
+	}
+	public void setConfirmed(int confirmed) {
+		this.confirmed = confirmed;
+	}
 	public int getSubjectNum() {
 		return subjectNum;
 	}
