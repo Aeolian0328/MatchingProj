@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css"/>
             
-            <!-- 유효성 검사 -->
+<!-- 강의명 중복 검사 -->
 <script>
 function checkSubject(){
 
@@ -39,24 +39,6 @@ function checkSubject(){
     });
 };
 </script>
-<!-- <script>
-function checkSubject(){
-    var subjectName = $('#subjectName').val();
-    $.ajax({
-        url:'checkSubject.do',
-        type:"post",
-        data:"subjectName=" + subjectName,
-        dataType:"json"})
-        .done(function(args){
-            if(args.num==0){
-                alert("과목명이 사용가능합니다.");               
-            }else{
-                alert("과목명이 사용 불가능합니다.");
-                $('#subjectName').val('');
-            }
-        })
-};
-</script> -->
 
   <!-- 자동 -(하이픈) 생성 -->
 <script>
@@ -102,28 +84,6 @@ function inputPhoneNumber(obj) {
 
 <body id="page-top">
 
-
- 
-<!--   Navigation -->
-<!--   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav"> -->
-  
-<!--     <div class="container"> -->
-<!--       <a class="navbar-brand js-scroll-trigger" href="#page-top">Matching</a> -->
-<!--       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
-<!--         <i class="fas fa-bars"></i> -->
-<!--       </button> -->
-<!--       <div class="collapse navbar-collapse" id="navbarResponsive"> -->
-<!--         <ul class="navbar-nav ml-auto"> -->
-<!--           <li class="nav-item mx-0 mx-lg-1"> -->
-<!--             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">강좌 생성</a> -->
-<!--           </li> -->
-<!--         </ul> -->
-<!--       </div> -->
-<!--     </div> -->
-    
-    
-<!--   </nav> -->
-
 	<!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
@@ -140,8 +100,7 @@ function inputPhoneNumber(obj) {
 <!-- insert.do -->
 <form method="post" action="insert.do">
 
-<!-- 선생님 아이디 정보 가져오기 -->
-
+<!-- 강사 로그인정보 가져오기 -->
 <input type="hidden" id="t_email" name="t_email" value="${loginData.t_email}"/>
 
   <!-- Upload Section -->
@@ -265,7 +224,6 @@ function inputPhoneNumber(obj) {
     </div>
   </section>
 </form>
-<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
@@ -281,7 +239,7 @@ function inputPhoneNumber(obj) {
     </a>
   </div>
 
-  <!-- Upload Modal 1 // upload image (클릭했을 때) -->
+  <!-- upload image (클릭했을 때) -->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
@@ -302,13 +260,13 @@ function inputPhoneNumber(obj) {
                   <div class="divider-custom-line"></div>
                 </div>
                 
-                <!-- Upload Modal - Image -->
+                <!-- Image -->
                 <img class="img-fluid rounded mb-5" src="img/subject/smileDarkgray.svg" alt="">
                 
-                <!-- Upload Modal - Text -->
+                <!-- Text -->
                 <p class="mb-5">이미지를 첨부해주세요. (.jpg만 가능)</p>
                        
-                <!-- image test -->
+                <!-- send image -->
                 <form action="image.do" method="post" enctype="multipart/form-data">  
 					파일 선택하기: <input type="file" name="file"/>  
 					<input type="submit" value="Upload File"/>  
@@ -332,7 +290,6 @@ function inputPhoneNumber(obj) {
   <!-- Contact Form JavaScript -->
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
-<!--   <script src="js/bootstrap-datetimepicker.min.js"></script> 없어도 될듯--> 
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
