@@ -17,10 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
-import apply.service.RankService;
 import upload.service.*;
 
 @Controller
@@ -36,40 +32,21 @@ public class UploadController {
 
 	// 업로드 양식 불러오기(index)
 	@RequestMapping(value = "upload.do", method = RequestMethod.GET)
-	public String form() {
+	public String form(HttpSession session) {
 		return "uploader/enroll";
 	}
 	
-
-	
+	//과목명 중복 확인
 	  @RequestMapping(value = "checkSubject.do" , method = RequestMethod.POST)
 	  public @ResponseBody String check(@ModelAttribute("ck") UploadDto ck , Model model) throws Exception
 	  
 	  { 
 		  int result = service.subjectCheck(ck.getSubjectName()); 
-		  System.out.println(result);
 		  return String.valueOf(result); 
 		  
 		  }
-	 
 	
-	
-//	  @RequestMapping(value = "checkSubject.do" , method = RequestMethod.POST)
-//	  public @ResponseBody String subCheck(String subjectName) {
-//	  
-//	  Gson gson = new Gson(); JsonObject json = new JsonObject(); int num = 0;
-//	  
-//	  UploadDto dto = service.subjectCheck(subjectName); System.out.println(dto);
-//	  
-//	  if(dto == null) 
-//	  { num = 0; }
-//	  else { num = 1; } 
-//	  
-//	  json.addProperty("num", num);
-//	  return gson.toJson(json); }
-	 
-	
-	// DB에 값 보내기 + 날짜 형식 변경
+	// DB에 값 보내기 + 날짜 형식 변경(yyyy-MM-dd hh:mm:ss)
 	@RequestMapping(value = "insert.do", method = RequestMethod.POST)
 	public String insert(@ModelAttribute("insert") UploadDto dto) {
 
@@ -130,7 +107,7 @@ public class UploadController {
 	public ModelAndView upload(@RequestParam CommonsMultipartFile file,HttpSession session){  
 		//String path=session.getServletContext().getRealPath("/");  
 	        filename=file.getOriginalFilename();  
-	        path1 = "C:\\Users\\Administrator\\git\\Matching\\projectUploader\\WebContent\\img\\subject";
+	        path1 = "C:\\Users\\Administrator\\Documents\\MatchingProj\\WebContent\\img\\sub_img";
 	        barr=file.getBytes();  
 	    return new ModelAndView("uploader/upload-success","filename",path1+"/"+filename);  //view name / model name / model data
 	}
