@@ -20,12 +20,14 @@
             <!-- 유효성 검사 -->
 <script>
 function checkSubject(){
-	alert("ㅇㅅㅇ");
-    var id = $('#subjectName').val();
+
+
+    var subjectName = $('#subjectName').val();
+  
     $.ajax({
-        url:'/checkSubject.do',
+        url:'checkSubject.do',
         type:'post',
-        data:{id:id},
+        data:{subjectName:subjectName},
         success:function(data){
             if($.trim(data)==0){
                 $('#chkMsg').html("사용가능");                
@@ -166,8 +168,7 @@ function inputPhoneNumber(obj) {
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>과목명</label>
-                <input class="form-control" id="subjectName" name="subjectName" type="text" placeholder="과목명" required="required" onkeyup="checkSubject()" data-validation-required-message="과목명을 입력해주세요.">
-                <input type="button" onclick="checkSubject()"/>
+                <input class="form-control" id="subjectName" name="subjectName" type="text" placeholder="과목명" required="required"  oninput="checkSubject()" data-validation-required-message="과목명을 입력해주세요.">
                 <span id="chkMsg"></span>
                 <p class="help-block text-danger"></p>
               </div>

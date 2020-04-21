@@ -15,5 +15,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into subject(subjectName, startTime, endTime, content, subjectImage, cost, subjecttag)
 		values(#{subjectName}, #{startTime}, #{endTime}, #{content}, #{subjectImage}, #{cost}, #{subjecttag})
 	</insert>
+
+
+	<select id = "check" parameterType = "String" resultType = "int">
+    SELECT COUNT(*)
+     FROM subject 
+     WHERE subjectName = #{subjectName}
+   </select>
 	
 </mapper>

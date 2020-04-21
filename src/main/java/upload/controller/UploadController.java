@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import apply.service.RankService;
 import upload.service.*;
 
 @Controller
@@ -32,6 +33,7 @@ public class UploadController {
 	@Autowired
 	UploadService service;
 	
+
 	// 업로드 양식 불러오기(index)
 	@RequestMapping(value = "upload.do", method = RequestMethod.GET)
 	public String form(HttpSession session) {
@@ -40,24 +42,35 @@ public class UploadController {
 		return "uploader/enroll";
 	}
 	
+
 	
-	@RequestMapping(value = "/checkSubject.do" , method = RequestMethod.POST)
-	public @ResponseBody String check(@ModelAttribute("ck") UploadDto ck , Model model) throws Exception{
-	    int result = service.subjectCheck(ck.getSubjectName());
-	    return String.valueOf(result);
-	}
+	  @RequestMapping(value = "checkSubject.do" , method = RequestMethod.POST)
+	  public @ResponseBody String check(@ModelAttribute("ck") UploadDto ck , Model model) throws Exception
+	  
+	  { 
 	
-	/*
-	 * @RequestMapping(value = "checkSubject.do" , method = RequestMethod.POST)
-	 * public @ResponseBody String subCheck(String subjectName) {
-	 * 
-	 * Gson gson = new Gson(); JsonObject json = new JsonObject(); int num = 0;
-	 * 
-	 * UploadDto dto = service.subjectCheck(subjectName); System.out.println(dto);
-	 * 
-	 * if(dto == null) { num = 0; } else { num = 1; } json.addProperty("num", num);
-	 * return gson.toJson(json); }
-	 */
+		  int result = service.subjectCheck(ck.getSubjectName()); 
+		  System.out.println(result);
+		  return String.valueOf(result); 
+		  
+		  }
+	 
+	
+	
+//	  @RequestMapping(value = "checkSubject.do" , method = RequestMethod.POST)
+//	  public @ResponseBody String subCheck(String subjectName) {
+//	  
+//	  Gson gson = new Gson(); JsonObject json = new JsonObject(); int num = 0;
+//	  
+//	  UploadDto dto = service.subjectCheck(subjectName); System.out.println(dto);
+//	  
+//	  if(dto == null) 
+//	  { num = 0; }
+//	  else { num = 1; } 
+//	  
+//	  json.addProperty("num", num);
+//	  return gson.toJson(json); }
+	 
 	
 	// DB에 값 보내기 + 날짜 형식 변경
 	@RequestMapping(value = "insert.do", method = RequestMethod.POST)
