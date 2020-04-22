@@ -10,16 +10,22 @@ $(function()
 {
 	$("#ExcelExport").click(function()
 			{
-		location.href="StudentExport.do";
+		location.href="SubjectExport.do";
 		})
 });
 
-function deleteStudent(s_num)
+function deleteSubject(subjectNum)
 {if(confirm("삭제?"))
 	{
-	location.href="StudentDelete.do?s_num="+s_num;
+	location.href="SubjectDelete.do?subjectNum="+subjectNum;
 	}
-	
+}
+function subjectConfirm(subjectNum)
+{
+	if(confirm("승인 하시겠습니까?"))
+		{
+		location.href="SubjectConfirm.do?subjectNum="+subjectNum;
+		}
 }
 
 </script>
@@ -257,6 +263,7 @@ function deleteStudent(s_num)
                       <th>학생 수</th>
                       <th>평점</th>
                       <th></th>
+                      <th></th>
                     </tr>
                   </thead>
                 
@@ -273,7 +280,8 @@ function deleteStudent(s_num)
      			 <td>${SubjectDto.t_email}</td>
      			 <td>${SubjectDto.studentCount}</td>
      			 <td>${SubjectDto.subjectScore}</td>
-     			 <td><input type = "button" id = "delete" onclick = "deleteStudent(${StudentDto.s_num})" value = "삭제"><td/>
+     			 <td><input type = "button" id = "delete" onclick = "deleteSubject(${SubjectDto.subjectNum})" value = "승인"><td/>
+     			 <td><input type = "button" id = "Confirm" onclick = "confirmSubject(${SubjectDto.subjectNum})" value = "삭제"><td/>
    				 </tr>
  				</tbody>
 				</c:forEach>

@@ -89,11 +89,20 @@ public class adminController {
 	//선생 엑셀 뽑기
 	@RequestMapping(value = "TeacherExport.do", method = RequestMethod.GET)
 	 public ModelAndView TeacherExcelDownloader(){
-		  System.out.println("선생엑셀 다운로드");
+		 
 		  List<TeacherDto> list = teacherService.TeacherList();
 		  
 		  return new ModelAndView("TeacherExcel","pageRanks",list);
 	  }
+	
+	//강좌 엑셀 뽑기
+		@RequestMapping(value = "SubjectExport.do", method = RequestMethod.GET)
+		 public ModelAndView SubjectExcelDownloader(){
+			 
+			  List<SubjectDto> list = subjectService.allselect();
+			  
+			  return new ModelAndView("SubjectExcel","pageRanks",list);
+		  }
 	//학생 삭제
 	@RequestMapping(value = "StudentDelete.do", method = RequestMethod.GET)
 	public String StudentDelete(int s_num)
@@ -108,6 +117,15 @@ public class adminController {
 		teacherService.Delete(t_num);
 		return "redirect:teacherList.do";
 	}
+	
+	@RequestMapping(value = "TeacherDelete.do", method = RequestMethod.GET)
+	public String SubjectDelete(int sub_num)
+	{
+		teacherService.Delete(sub_num);
+		return "redirect:teacherList.do";
+	}
+	
+	
 	
 	/*
 	 * public String SubjectList() { List<SubjectDto> list = subjectService. }

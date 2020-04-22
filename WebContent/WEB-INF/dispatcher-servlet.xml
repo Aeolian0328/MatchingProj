@@ -68,6 +68,7 @@
 	
 	<bean id="StudentExcel" class="admin.download.StudentDownLoader"/>
 	<bean id="TeacherExcel" class="admin.download.TeacherDownLoader"/>
+	<bean id="SubjectExcel" class="admin.download.SubjectDownLoader"/>
 	<mvc:annotation-driven>
 		<mvc:message-converters>
 			<bean

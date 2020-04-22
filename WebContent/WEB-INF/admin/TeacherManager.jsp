@@ -10,14 +10,14 @@ $(function()
 {
 	$("#ExcelExport").click(function()
 			{
-		location.href="TeacherExport.do";
+		location.href="SubjectExport.do";
 		})
 });
 
 function deleteStudent(s_num)
 {if(confirm("삭제?"))
 	{
-	location.href="TeacherDelete.do?s_num="+t_num;
+	location.href="SubjectDelete.do?s_num="+t_num;
 	}
 	
 }
