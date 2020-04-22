@@ -58,7 +58,7 @@ public class BoardServiceImpl implements BoardService{
 		String content=bdto.getContent();
 		String writer=bdto.getWriter();
 		String email=bdto.getEmail();
-		Timestamp reg_date=bdto.getReg_datetime();
+		String reg_date=bdto.getReg_datetime();
 		
 		//태그문자를 처리
 		title = title.replace("<","&lt;");

@@ -28,7 +28,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
 	rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+ <link href="css/styles.css" rel="stylesheet" /> 
 <script src="js/regist/registScript.js" ></script>
 <script>
 	function addTools() {
@@ -64,39 +64,96 @@
         <header class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold"></h1>
-	<form:form modelAttribute="memberInfo" enctype="multipart/form-data" >
+                    <div class="col-lg-10 align-self-top">
+                        <h3 class="text-uppercase text-white font-weight-bold">학생 회원가입</h3>
+	<form:form  modelAttribute="memberInfo" enctype="multipart/form-data" >
 
 		<p>
-			<form:label class="text-white-75 font-weight-light mb-3" path="name" maxlength="10" >이름</form:label>
-			<form:input path="name" onkeydown="nameCheck()"/>
-			<form:errors path="name" class="text-white-75 font-weight-light mb-3" />
+			<div class="row align-items-center justify-content-center">
+				
+				<div class="col-xs-6 text-right pr-3">
+				<form:label class="text-white-75 font-weight-light mb-0" path="name" maxlength="10" >이름</form:label>
+				</div>
+				<div class="col-xs-6 text-left">
+				<form:input  path="name" onkeydown="nameCheck()"/><br>				
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-9 text-right">
+			<small><form:errors path="name" class="text-white-75 font-weight-light mb-2" /></small>
+			</div>
+			</div>
 		</p>
 		<p>
-			<form:label class="text-white-75 font-weight-light mb-3" path="password" maxlength="20">비밀번호</form:label>
-			<form:password path="password" onkeydown="passwordCheck()" />
-			<form:errors path="password" class="text-white-75 font-weight-light mb-3" />
+			<div class="row align-items-center justify-content-center">
+				<div class="col-xs-6 text-right pr-3">
+				<form:label class="text-white-75 font-weight-light mb-0" path="password" maxlength="20">비밀번호</form:label>
+				</div>
+				<div class="col-xs-6 text-left">
+				<form:password  path="password" onkeydown="passwordCheck()" /><br>
+				
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-xs-9 text-right">
+				<small><form:errors path="password" class="text-white-75 font-weight-light mb-2" /></small>
+				</div>
+			</div>
+			`
 		</p>
 		<p>
-			<form:label class="text-white-75 font-weight-light mb-3" path="reCheck" maxlength="20">비밀번호 재확인</form:label>
-			<form:password path="reCheck" onkeydown="rePasswordCheck()" />
-			<form:errors path="reCheck" class="text-white-75 font-weight-light mb-3" />
+		<div class="row align-items-center justify-content-center">
+				<div class="col-xs-6 text-right pr-3">
+			<form:label class="text-white-75 font-weight-light mb-0" path="reCheck" maxlength="20">비밀번호 재확인</form:label>
+			</div>
+				<div class="col-xs-6 text-left">
+			<form:password path="reCheck" onkeydown="rePasswordCheck()" /><br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-9 text-right">
+			<small><form:errors path="reCheck" class="text-white-75 font-weight-light mb-2" /></small>
+			</div>
+			</div>
 		</p>
 		<p>
-			<form:label class="text-white-75 font-weight-light mb-3" path="s_email" maxlength="20">이메일</form:label>
-			<form:input path="s_email" onkeydown="eCheck()" />
-			<form:errors path="s_email" class="text-white-75 font-weight-light mb-3" />
+		<div class="row align-items-center justify-content-center">
+				<div class="col-xs-6 text-right pr-3">
+			<form:label class="text-white-75 font-weight-light mb-0" path="s_email" maxlength="20">이메일</form:label>
+			</div>
+				<div class="col-xs-6 text-left">
+			<form:input path="s_email" onkeydown="eCheck()" /><br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-9 text-right">
+			<small><form:errors path="s_email" class="text-white-75 font-weight-light mb-2" /></small>
+			</div>
+			</div>
 		</p>
 
 		<p>
-			<form:label class="text-white-75 font-weight-light mb-3" path="s_phone" maxlength="20">전화번호</form:label>
-			<form:input path="s_phone" onkeydown="pCheck()" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" />
-			<form:errors path="s_phone" class="text-white-75 font-weight-light mb-3" />
+		<div class="row align-items-center justify-content-center">
+				<div class="col-xs-6 text-right pr-3">
+			<form:label class="text-white-75 font-weight-light mb-0" path="s_phone" maxlength="20">전화번호</form:label>
+			</div>
+				<div class="col-xs-6 text-left">
+			<form:input path="s_phone" onkeydown="pCheck()" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" /><br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-9 text-right">
+			<small><form:errors path="s_phone" class="text-white-75 font-weight-light mb-2" /></small>
+			</div>
+			</div>
 		</p>
 
 		<p>
-			<label class="text-white-75 font-weight-light mb-3" for="s1_tag">관심 분야</label> 
+		<div class="row align-items-center justify-content-center">
+				<div class="col-xs-6 text-right pr-3">
+			<label class="text-white-75 font-weight-light mb-0" for="s1_tag">관심 분야</label>
+			</div>
+				<div class="col-xs-6 text-left"> 
 			<select id="s1_tag" onchange="addTools()">
 				<option value="">---선택하세요---</option>
 				<option value="JAVA">JAVA</option>
@@ -105,13 +162,19 @@
 			</select>
 			<span id=divTools class="text-white-75 font-weight-light mt-0 pt-0 mb-0 pb-0"></span>
 			<form:hidden path="s_tag" />
+				</div>
+			</div>
 		</p>
 		
 		<p>
-			<form:label class="text-white-75 font-weight-light mt-0 pt-0 mb-3" path="photo">
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
-			본인 사진:</form:label>
+		<div class="row">
+				<div class="col-xs-6 text-right pr-3">
+			<form:label class="text-white-75 font-weight-light mt-0 pt-0 mb-3" path="photo" >본인 사진</form:label>
+				</div>
+				<div class="col-xs-6 text-left"> 
 			<input type="file" class="text-white-75 font-weight-light mb-3" name="photo" id="photo"/><br>
+			</div>
+			</div>
 		</p>
 		<p>
 			<input type="submit" value="회원 등록">
@@ -121,10 +184,7 @@
 	
  <hr class="divider my-4" />
                     </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-                    </div>
+                   
                 </div>
             </div>
         </header>

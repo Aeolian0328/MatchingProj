@@ -39,6 +39,8 @@ public class RankDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("rank.user_hap", user_hap_total);
 	}
 	
+
+	
 	
 	
 	

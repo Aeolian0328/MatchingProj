@@ -9,8 +9,8 @@ public class ReplyDto {
 	private String replytext;
 	private String replyer;
 	private String name;
-	private Timestamp reg_datetime;
-	private Timestamp reg_updatetime;
+	private String reg_datetime;
+	private String reg_updatetime;
 	
 	
 	public int getRno() {
@@ -44,23 +44,24 @@ public class ReplyDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Timestamp getReg_datetime() {
+	
+	public String getReg_datetime() {
 		return reg_datetime;
 	}
-	public void setReg_datetime(Timestamp reg_datetime) {
+	public void setReg_datetime(String reg_datetime) {
 		this.reg_datetime = reg_datetime;
 	}
-	public Timestamp getReg_updatetime() {
+	public String getReg_updatetime() {
 		return reg_updatetime;
 	}
-	public void setReg_updatetime(Timestamp reg_updatetime) {
+	public void setReg_updatetime(String reg_updatetime) {
 		this.reg_updatetime = reg_updatetime;
 	}
 	
 	
 	
-	public ReplyDto(int rno, int code, String replytext, String replyer, String name, Timestamp reg_datetime,
-			Timestamp reg_updatetime) {
+	public ReplyDto(int rno, int code, String replytext, String replyer, String name, String reg_datetime,
+			String reg_updatetime) {
 		super();
 		this.rno = rno;
 		this.code = code;

@@ -76,8 +76,8 @@ $(document).ready(function(){
             	  output += "<tbody><tr>";
                   output += "<td>"+result[i].replyer+"</td>";
                   output += "<td>"+result[i].replytext+"</td>";
-                  output += "<td>"+changeDate(result[i].reg_datetime)+"</td>";
-/*                   output += "<td>"+'<input type="button" id="btnUpdate2"  class="btn btn-info btnUpdate2" value="수정"/>'+"</td>";
+                  output += "<td>"+result[i].reg_datetime+"</td>";
+/*                output += "<td>"+'<input type="button" id="btnUpdate2"  class="btn btn-info btnUpdate2" value="수정"/>'+"</td>";
                   output += "<td>"+'<input type="button" id="btnDelete2" class="btn btn-danger btnDelete2" value="삭제"/>'+"</td>";
  */            	  output += "</tr></tbody>";
                   }
@@ -89,7 +89,7 @@ $(document).ready(function(){
   }
 
   
-  function changeDate(date){
+  /* function changeDate(date){
 	  date=new Date(parseInt(date));
 	  year = date.getFullYear();
 	  month = date.getMonth();
@@ -99,7 +99,7 @@ $(document).ready(function(){
 	  second=date.getSeconds();
 	  strDate=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second;
 	  return strDate;
-  }
+  } */
 
   
 /////////////////////////////////댓글입력////////////////////////////////////////////

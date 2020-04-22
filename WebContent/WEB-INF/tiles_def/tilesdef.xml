@@ -23,9 +23,7 @@
 	<definition name="memberForm_t" extends="base_layout">
 		<put-attribute name="body" value="/WEB-INF/teacher/t_regist/memberForm_t.jsp" />
 	</definition>
-	<definition name="board/list" extends="base_layout">		
-		<put-attribute name="body" value="/WEB-INF/board/list.jsp" />
-	</definition>
+
 
 	<definition name="uploader/enroll" extends="base_layout">		
 		<put-attribute name="body" value="/WEB-INF/uploader/enroll.jsp" />
@@ -35,10 +33,33 @@
 		<put-attribute name="body" value="/WEB-INF/apply/sel_subject.jsp" />
 	</definition>
 	
-		<definition name="apply/list" extends="base_layout">		
+	<definition name="apply/list" extends="base_layout">		
 		<put-attribute name="body" value="/WEB-INF/apply/list.jsp" />
 	</definition>
 	
+	<definition name="board/list" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/board/list.jsp" />
+	</definition>
+	
+	<definition name="board/write" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/board/write.jsp" />
+	</definition>
+	
+	<definition name="board/view" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/board/view.jsp" />
+	</definition>
+	
+	<definition name="board/insert" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/board/insert.jsp" />
+	</definition>
+	
+	<definition name="board/password" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/board/passwordcheck.jsp" />
+	</definition>
+	
+	<definition name="board/update" extends="base_layout">		
+		<put-attribute name="body" value="/WEB-INF/board/update.jsp" />
+	</definition>
 
 	
 </tiles-definitions>

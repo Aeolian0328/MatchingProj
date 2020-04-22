@@ -96,13 +96,12 @@ public class adminController {
 	  }
 	
 	//강좌 엑셀 뽑기
-		@RequestMapping(value = "SubjectExport.do", method = RequestMethod.GET)
-		 public ModelAndView SubjectExcelDownloader(){
-			 
-			  List<SubjectDto> list = subjectService.allselect();
-			  
-			  return new ModelAndView("SubjectExcel","pageRanks",list);
-		  }
+	@RequestMapping(value = "SubjectExport.do", method = RequestMethod.GET)
+	 public ModelAndView SubjectExcelDownloader()
+	{
+			List<SubjectDto> list = subjectService.allselect();
+			 return new ModelAndView("SubjectExcel","pageRanks",list);
+	}
 	//학생 삭제
 	@RequestMapping(value = "StudentDelete.do", method = RequestMethod.GET)
 	public String StudentDelete(int s_num)
@@ -118,11 +117,19 @@ public class adminController {
 		return "redirect:teacherList.do";
 	}
 	
-	@RequestMapping(value = "TeacherDelete.do", method = RequestMethod.GET)
-	public String SubjectDelete(int sub_num)
+	//강좌 삭제
+	@RequestMapping(value = "SubjectDelete.do", method = RequestMethod.GET)
+	public String SubjectDelete(int subjectNum)
 	{
-		teacherService.Delete(sub_num);
-		return "redirect:teacherList.do";
+		subjectService.delete(subjectNum);
+		return "redirect:adminSubjectTables.do";
+	}
+	
+	@RequestMapping(value = "SubjectConfirm.do", method = RequestMethod.GET)
+	public String SubjectConfirm(int subjectNum)
+	{
+		subjectService.confirm(subjectNum); 
+		return "redirect:adminSubjectTables.do";
 	}
 	
 	

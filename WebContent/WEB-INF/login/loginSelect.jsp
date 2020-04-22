@@ -40,21 +40,20 @@
         <header class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold"></h1>
+                    <div class="col-lg-10 align-self-top">
+                        <h3 class="text-uppercase text-white font-weight-bold">로그인</h3>
    
    <form:form name="form" commandName="loginCommand">
 	<form:errors />
-	<p class="text-white-75 font-weight-light mb-5" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 로그인  </p>
 	<p>
-		<label class="text-white-75 font-weight-light mb-5" for="email">&nbsp&nbsp 이메일 &nbsp&nbsp&nbsp</label>
-		<form:input path="email" />
-		<form:errors class="text-white-75 font-weight-light mb-5" path="email" />
+		<label class="text-white-75 font-weight-light mb-2" for="email">&nbsp&nbsp 이메일 &nbsp&nbsp&nbsp</label>
+		<form:input path="email" /><br>
+		<small><form:errors class="text-white-75 font-weight-light mb-5" path="email" /></small>
 	</p>
 	<p>
-		<label class="text-white-75 font-weight-light mb-5" for="password">&nbsp 비밀번호 &nbsp</label>
-		<form:password id="password" path="password" />
-		<form:errors class="text-white-75 font-weight-light mb-5" path="password" />
+		<label class="text-white-75 font-weight-light mb-2" for="password">&nbsp 비밀번호 &nbsp</label>
+		<form:password id="password" path="password" /><br>
+		<small><form:errors class="text-white-75 font-weight-light mb-5" path="password" /><small>
 	</p>
 	<p>
 
@@ -66,11 +65,7 @@
 	
 	</form:form>
 	   <hr class="divider my-4" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-                    </div>
+                    </div>                   
                 </div>
             </div>
         </header>

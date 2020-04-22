@@ -49,6 +49,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <insert id="apply" parameterType="apply.model.SubjectDto">
       	insert into ${subjectName} values(#{subjectName},#{s_email})
       </insert>
+      
+      <delete id="delete" parameterType="apply.model.SubjectDto">
+      delete from subject 
+      where subjectNum = #{subjectNum}
+      </delete>
+      
+      <update id="confirm" parameterType="apply.model.SubjectDto">
+      update subject
+      set confirmed = 1
+      where subjectNum = #{subjectNum}
+      </update>
 	
 	
 

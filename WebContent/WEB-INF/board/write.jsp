@@ -98,22 +98,6 @@ $(document).ready(function(){
 
 <body id="page-top">
 
- <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="http://localhost:8082/Matching/index.jsp">MatchingService</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="insert.do">로그인하기</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="BoardList.do">문의하기</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
 
 <%-- <%@ include file="" %> --%>
 
@@ -128,7 +112,7 @@ $(document).ready(function(){
 
 <h1 class="text-white">QnA질문하기</h1>
 
-<form name="form1" method="post" action="insert.do">
+<form name="form1" method="post" action="insertBoard.do">
 <div class="text-white">작성자이름 <h2>${loginData.name}</h2></div>  
 <input type="hidden" name="writer" value="${loginData.name}"><input type="hidden" name="email" value="${loginData.s_email}">
 <div class="text-white">제목<input name="title" size="80" placeholder="제목을 입력해주세요"></div>

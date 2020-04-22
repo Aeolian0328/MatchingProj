@@ -54,6 +54,16 @@ public class SubjectService {
 		return dao.unConfirmed();
 	}
 	
+	public void delete(int subjectNum)
+	{
+		dao.delete(subjectNum);
+	}
+	
+	public void confirm(int subjectNum)
+	{
+		dao.confirm(subjectNum);
+	}
+	
 
 
 

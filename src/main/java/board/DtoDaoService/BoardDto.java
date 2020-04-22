@@ -1,7 +1,5 @@
 package board.DtoDaoService;
 
-import java.sql.Timestamp;
-
 public class BoardDto{
 	
 	private int code;
@@ -9,7 +7,7 @@ public class BoardDto{
 	private String content;
 	private String writer;
 	private String email;
-	private Timestamp reg_datetime;
+	private String reg_datetime;
 	private int viewcnt;
 	//게시글 댓글의 수 추가
 	private int recnt;
@@ -57,13 +55,16 @@ public class BoardDto{
 		this.viewcnt = viewcnt;
 	}
 	
-	public Timestamp getReg_datetime() {
+	
+	
+	public String getReg_datetime() {
 		return reg_datetime;
 	}
-	public void setReg_datetime(Timestamp reg_datetime) {
+
+	public void setReg_datetime(String reg_datetime) {
 		this.reg_datetime = reg_datetime;
 	}
-	
+
 	public int getRecnt() {
 		return recnt;
 	}
@@ -81,7 +82,7 @@ public class BoardDto{
 
 
 
-	public BoardDto(int code, String title, String content, String writer, String email, Timestamp reg_datetime,
+	public BoardDto(int code, String title, String content, String writer, String email, String reg_datetime,
 			int viewcnt, int recnt, String password) {
 		super();
 		this.code = code;

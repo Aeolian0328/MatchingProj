@@ -50,11 +50,11 @@ $("#btnUpdate").click(function(){
 			alert("내용을 입력하세요");
 			document.form1.content.focus();
 			return;
-	}if(writer==""){
+	}/* if(writer==""){
 			alert("이름을 입력하세요");
 			document.form1.writer.focus();
 			return;
-	}
+	} */
 	 	document.form1.action="update.do";
 	 	document.form1.submit();
 });
@@ -69,7 +69,7 @@ $("#btnUpdate").click(function(){
 <body id="page-top">
 
  <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <!--       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="http://localhost:8082/Matching/index.jsp">MatchingService</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -83,8 +83,8 @@ $("#btnUpdate").click(function(){
                 </div>
             </div>
         </nav>
-
-
+ -->
+ 
 <!-- header -->
 <header class="masthead">
 <div class="row h-50 align-items-left justify-content-center text-center">
@@ -99,11 +99,7 @@ $("#btnUpdate").click(function(){
 ${BoardDto.viewcnt} </p>
 </div>
 
-<div>
-<p class="text-white">작성자이름
-<input name="writer" value= "${BoardDto.writer}">
-</p>
-</div>
+<div class="text-white">작성자이름 <h2> ${BoardDto.writer}</h2></div>
 
 <div>
 <p class="text-white">제목</p>
@@ -119,6 +115,7 @@ ${BoardDto.viewcnt} </p>
 
 <!-- <div style="width:650px; text-align:center;"> -->
 
+<input type="hidden" name="writer" value="${BoardDto.writer}">
 <input type="hidden" name="code" value="${BoardDto.code}">
 <input type="hidden" name="password" value="${BoardDto.password}">
 <input type="button" id="btnUpdate"  class="btn btn-info" value="수정완료"/>

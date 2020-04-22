@@ -10,7 +10,7 @@ import board.DtoDaoService.BoardDto;
 import board.DtoDaoService.BoardService;
 
 @Controller
-@RequestMapping("insert.do")
+@RequestMapping("insertBoard.do")
 public class InsertCont {
 	
 	@Autowired

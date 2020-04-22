@@ -94,6 +94,16 @@ public class SubjectDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("subject.unConfirmed");
 	}
 	
+	public void delete(int subjectNum)
+	{
+		sqlSession.delete("subject.delete", subjectNum);
+	}
+	
+	public void confirm(int subjectNum)
+	{
+		sqlSession.update("subject.confirm", subjectNum);
+	}
+	
 	
 	
 

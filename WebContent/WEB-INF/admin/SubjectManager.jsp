@@ -20,7 +20,7 @@ function deleteSubject(subjectNum)
 	location.href="SubjectDelete.do?subjectNum="+subjectNum;
 	}
 }
-function subjectConfirm(subjectNum)
+function confirmSubject(subjectNum)
 {
 	if(confirm("승인 하시겠습니까?"))
 		{
@@ -280,8 +280,8 @@ function subjectConfirm(subjectNum)
      			 <td>${SubjectDto.t_email}</td>
      			 <td>${SubjectDto.studentCount}</td>
      			 <td>${SubjectDto.subjectScore}</td>
-     			 <td><input type = "button" id = "delete" onclick = "deleteSubject(${SubjectDto.subjectNum})" value = "승인"><td/>
-     			 <td><input type = "button" id = "Confirm" onclick = "confirmSubject(${SubjectDto.subjectNum})" value = "삭제"><td/>
+     			 <td><input type = "button" id = "confirm" onclick = "confirmSubject(${SubjectDto.subjectNum})" value = "승인"><td/>
+     			 <td><input type = "button" id = "delete" onclick = "deleteSubject(${SubjectDto.subjectNum})" value = "삭제"><td/>
    				 </tr>
  				</tbody>
 				</c:forEach>

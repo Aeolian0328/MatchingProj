@@ -35,7 +35,9 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
 		<url-pattern>/student/*</url-pattern>
 		<url-pattern>/teacher/*</url-pattern>
 	</servlet-mapping>
-
+	<session-config>
+    	<session-timeout>30</session-timeout>
+	</session-config>
 
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
