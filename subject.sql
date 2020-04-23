@@ -11,7 +11,7 @@ subjectImage varchar(100),/*과목 소개 이미지 저장(경로)*/
 cost int(20),/*수강비*/
 subjecttag varchar(20),/*분류*/
 t_email varchar(20) references teacher(t_email),/*선생님 이메일*/
-s_emastudentstudentil varchar(20) references student(s_email),/*학생 이메일*/
+s_email varchar(20) references student(s_email),/*학생 이메일*/
 studentCount int(20),/*학생 수*/
 subjectScore int(5),/* 평점(자동계산) */
 confirmed int(4) default 0
