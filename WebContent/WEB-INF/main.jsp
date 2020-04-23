@@ -90,40 +90,6 @@
 	<c:if test = "${loginData.name eq '관리자' || loginData_t.name eq '관리자'}">
 		<a href="admin.do">관리자 페이지</a><br>
 	</c:if>
-	
-
-	     
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-899983" class="btn btn-primary btn-large" href="#modal-container-899983" role="button" data-toggle="modal">로그인</a>			
-			<div class="modal fade" id="modal-container-899983" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="myModalLabel">
-								로그인
-							</h5> 
-						</div>
-						<div class="modal-body">
-							
-						</div>
-						<div class="modal-footer">
-							 
-							<p>
-								<button type="button" onclick = "location.href = 'LoginStudent.do' " width="50px" height="50px">학생 로그인</button>
-							</p>
-							<p>
-								<button type="button" onclick = "location.href = 'LoginTeacher.do'">선생님 로그인</button>
-							</p>
-
-						</div>
-					</div>					
-				</div>
-			</div>
-</div>      
-	
-	
                       
                     </div>
                    

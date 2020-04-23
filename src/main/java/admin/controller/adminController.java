@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 @Controller
 public class adminController {
 	
@@ -38,7 +39,7 @@ public class adminController {
 	TeacherService teacherService;
 	@Autowired
 	SubjectService subjectService;
-	
+
 	//첫 관리자 페이지
 	@RequestMapping(value = "admin.do", method = RequestMethod.GET)
 	public String administartor()
@@ -69,10 +70,14 @@ public class adminController {
 		tModel.addAttribute("list", list);
 		return "admin/TeacherManager";
 	}
+	//강좌 리스트
 	@RequestMapping(value = "adminSubjectTables.do", method = RequestMethod.GET)
 	public  String unConfirmedList(Model tModel)
 	{
+	
+		
 		List<SubjectDto> list = subjectService.unConfirmed();
+		
 		tModel.addAttribute("list",list);
 		return "admin/SubjectManager";
 	}

@@ -54,7 +54,24 @@
 		$("#s_tag").val(div.text());
 	}
 </script>
-	
+<style>
+.col-xs-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+} 
+
+.col-xs-9 {
+    flex: 0 0 75%;
+    max-width: 75%;    
+} 
+.col-xs-9, .col-xs-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+</style>
 </head>
 <body id="page-top">
         <!-- Navigation-->
