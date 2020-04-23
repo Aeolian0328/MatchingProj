@@ -30,13 +30,13 @@ from subject
 where startTime like CONCAT(#{year},'%')
 	</select>
 
-	<select id="radar" resultType="apply.model.SubjectDto">
+<select id="radar" resultType="apply.model.SubjectDto">
 select distinct(subjecttag)
 from subject;
 	</select>
 	
 	
-		<select id="user_hap" resultType="apply.model.SubjectDto" parameterType="map">
+<select id="user_hap" resultType="apply.model.SubjectDto" parameterType="map">
 select subjecttag, sum(studentCount) as sum
 from subject
 where subjecttag =#{user_hap_total}
