@@ -201,7 +201,7 @@ function countfail(){
         <hr>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="img/sub_img/${sel_sub.subjectImage}" alt="사진">
+        <img class="img-fluid rounded" src="img/sub_img/${sel_sub.subjectImage}" alt="사진" width=700px, height=200px>
         <hr>
         
          <blockquote class="blockquote">

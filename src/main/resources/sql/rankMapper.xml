@@ -36,11 +36,11 @@ from subject;
 	</select>
 	
 	
-		<select id="user_hap" resultType="apply.model.SubjectDto" parameterType="String">
+		<select id="user_hap" resultType="apply.model.SubjectDto" parameterType="map">
 select subjecttag, sum(studentCount) as sum
 from subject
 where subjecttag =#{user_hap_total}
-
+and age like CONCAT(#{age},'%')
 	</select>
 
 </mapper>

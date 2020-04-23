@@ -29,20 +29,27 @@ public class SubjectController {
 	RankService rank;
 	
 
-	@ModelAttribute("subject")
-	public List<SubjectDto> Data() {
+
+	@RequestMapping(value = "/index1.do")
+	public String form(@RequestParam("name") String name, Model model) {
+		System.out.println(name);
 		 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		 Calendar cal = Calendar.getInstance();
-		List<SubjectDto> list = sub.finish_sub(dateFormat.format(cal.getTime()));
-		return list;
-	}
-	
-	@RequestMapping(value = "/index1.do")
-	public String form() {
+		List<SubjectDto> list = sub.finish_sub(dateFormat.format(cal.getTime()),name);
+		model.addAttribute("subject",list);
+		System.out.println("aa"+list.get(0).getConfirmed());
 		return "apply/list";
 	}
 	
+//	@RequestMapping(value = "/index1.do")
+//	public String form() {
+//		return "apply/list";
+//	}
 	
+	
+
+	
+
 //	
 //	@RequestMapping(value = "/graph1.do")
 //	public String graph1() {

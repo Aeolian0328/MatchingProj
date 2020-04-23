@@ -12,7 +12,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Services</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="upload.do">강좌 업로드</a></li>
-          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do">수강신청</a></li>
+          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do?name=컴퓨터">수강신청</a></li>
           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="graph1.do">통계</a></li>
           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="BoardList.do">QnA</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" id = "logIn" href="loginSelect.do">로그인</a></li>
