@@ -117,7 +117,7 @@ function inputPhoneNumber(obj) {
     				<option value="">강좌 선택</option>
     				<option value="컴퓨터">컴퓨터</option>
   				   <option value="음악">음악</option>
-    				<option value="기타">기타</option>
+    				<option value="취미">취미</option>
     				
 				</select>
 				
