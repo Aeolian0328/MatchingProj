@@ -127,6 +127,7 @@ public class UploadController {
 		try{ 
         	
         BufferedOutputStream bout=new BufferedOutputStream(  
+        		//내일 확인 꼭 
                  new FileOutputStream(path1+"/"+filename));  
         bout.write(barr);  
         bout.flush();  
