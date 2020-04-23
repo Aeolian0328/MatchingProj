@@ -130,10 +130,27 @@ function chart(args){
         labels: args.tagname,
         datasets: [
         	{
-            data: args.user_hap_total,
+            label: "20대",	
+            data: args.user_hap_total_20,
             backgroundColor: color(chartColors.red).alpha(0.2).rgbString(),
             borderColor: chartColors.red,
             pointBackgroundColor: chartColors.red
+         
+        },
+        {
+            label: "30대",	
+            data: args.user_hap_total_30,
+            backgroundColor: color(chartColors.blue).alpha(0.2).rgbString(),
+            borderColor: chartColors.blue,
+            pointBackgroundColor: chartColors.blue
+         
+        },
+        {
+            label: "40대",	
+            data: args.user_hap_total_40,
+            backgroundColor: color(chartColors.orange).alpha(0.2).rgbString(),
+            borderColor: chartColors.orange,
+            pointBackgroundColor: chartColors.orange
          
         }
         	
@@ -190,7 +207,7 @@ function chart(args){
           yAxes: [{
             ticks: {
               min: 0,
-              max: 1200,
+              max: 400,
               maxTicksLimit: 8
             },
             gridLines: {
@@ -217,7 +234,7 @@ function chart(args){
     	        
     	        ticks: {
     	            suggestedMin: 0,
-    	            suggestedMax: 4500
+    	            suggestedMax: 130
     	        }
     	    }
     	};
@@ -336,25 +353,25 @@ function chart(args){
 <!--     </div> -->
 
 
-  <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="main.do">MatchingService</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Services</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="upload.do">강좌 업로드</a></li>
-          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do">수강신청</a></li>
-          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="graph1.do">통계</a></li>
-          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="BoardList.do">QnA</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" id = "logIn" href="loginSelect.do">로그인</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="RegistSelect.do">회원가입</a></li>
+<!--   <div class="container"> -->
+<!--                 <a class="navbar-brand js-scroll-trigger" href="main.do">MatchingService</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
+<!--                 <div class="collapse navbar-collapse" id="navbarResponsive"> -->
+<!--                     <ul class="navbar-nav ml-auto my-2 my-lg-0"> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Services</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="upload.do">강좌 업로드</a></li> -->
+<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do">수강신청</a></li> -->
+<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="graph1.do">통계</a></li> -->
+<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="BoardList.do">QnA</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" id = "logIn" href="loginSelect.do">로그인</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="RegistSelect.do">회원가입</a></li> -->
 
                
      
                          
-                    </ul>
-                </div>
-            </div>
+<!--                     </ul> -->
+<!--                 </div> -->
+<!--             </div> -->
             
             
             
@@ -435,36 +452,36 @@ function chart(args){
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
+                                    <div class="card-body">Ready...</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Ready...</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
+                                    <div class="card-body">Ready...</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Ready...</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
+                                    <div class="card-body">Ready...</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Ready...</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
+                                    <div class="card-body">Ready...</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Ready...</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

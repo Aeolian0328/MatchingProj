@@ -1,5 +1,6 @@
 package apply.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -35,8 +36,11 @@ public class RankDao extends SqlSessionDaoSupport{
 		return getSqlSession().selectList("rank.radar");
 	}
 	
-	public List<SubjectDto> user_hap(String user_hap_total){
-		return getSqlSession().selectList("rank.user_hap", user_hap_total);
+	public List<SubjectDto> user_hap(String user_hap_total, String age){
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("user_hap_total", user_hap_total);
+		map.put("age", age);
+		return getSqlSession().selectList("rank.user_hap", map);
 	}
 	
 

@@ -18,8 +18,8 @@ public class SubjectService {
 		this.dao = dao;
 	}
 
-	public List<SubjectDto> finish_sub(String finish_date) {
-		return dao.finish_sub(finish_date);
+	public List<SubjectDto> finish_sub(String finish_date, String name) {
+		return dao.finish_sub(finish_date,name);
 	}
 
 	

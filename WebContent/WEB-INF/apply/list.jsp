@@ -40,6 +40,37 @@
 </script> -->
 
 
+<style>
+.card-text {
+  overflow: hidden; 
+  white-space: normal; 
+  line-height: 1.2; 
+  height: 12.0em; 
+  text-align: left; 
+  word-wrap: break-word; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 10; 
+  -webkit-box-orient: vertical;
+
+
+
+
+/*     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 라인수 */
+/*     -webkit-box-orient: vertical; */
+/*     height: 100px; */
+/*     word-wrap:break-word;  */
+/*     line-height: 1.2em; */
+/*     height: 3.6em; /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */ */ */
+    
+	}
+
+</style>
+
+
+
 
 
 
@@ -86,25 +117,41 @@
     <div class="row">
 
       <div class="col-lg-3">
-
-        <h1 class="my-4">Class</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item active">Computer</a>
-          <a href="#" class="list-group-item">Hobby</a>
-          <a href="#" class="list-group-item">Music</a>
-        </div>
+		
+        <h1 class="my-4">Class List</h1>
+        
+          <div class="list-group"  >
+      <a class="list-group-item list-group-item-action text-primary"  href="index1.do?name=컴퓨터" >Computer</a>
+      <a class="list-group-item list-group-item-action text-primary"  href="index1.do?name=취미" >Hobby</a>
+      <a class="list-group-item list-group-item-action text-primary"  href="index1.do?name=음악" >Music</a>
+      <a class="list-group-item list-group-item-action text-light"  href="#" role="tab" >Ready...</a>
+      <a class="list-group-item list-group-item-action text-light" href="#" role="tab" >Ready...</a>
+      <a class="list-group-item list-group-item-action text-light"  href="#" role="tab" >Ready...</a>
+    </div>
+    
+    
+<!--         <div class="list-group" id="list-tab" role="tablist"> -->
+<!--           <a href="index1.do?name=컴퓨터"  aria-controls="profile" class="list-group-item active">Computer</a> -->
+<!--           <a href="index1.do?name=취미"  class="list-group-item">Hobby</a> -->
+<!--           <a href="index1.do?name=음악" data-toggle="list" class="list-group-item">Music</a> -->
+<!--           <a href="#" data-toggle="list" class="list-group-item">Ready...</a> -->
+<!--           <a href="#" data-toggle="list" class="list-group-item">Ready...</a> -->
+<!--           <a href="#" data-toggle="list" class="list-group-item">Ready...</a> -->
+<!--         </div> -->
         
 <!--       <div class="bg-light border-right" id="sidebar-wrapper"> -->
 <!--       <div class="sidebar-heading">Start Bootstrap </div> -->
 <!--       <div class="list-group list-group-flush"> -->
-<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> -->
-<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> -->
-<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a> -->
-<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Events</a> -->
-<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a> -->
-<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
+<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Computer</a> -->
+<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Music</a> -->
+<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Hobby</a> -->
+<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Ready...</a> -->
+<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Ready...</a> -->
+<!--         <a href="#" class="list-group-item list-group-item-action bg-light">Ready...</a> -->
 <!--       </div> -->
 <!--     </div> -->
+
+
     
     
 
@@ -142,13 +189,19 @@
 
         <div class="row">
         
+        
+        
+        
 		
+
+
 	
-		
 		<c:forEach var="subject" items="${subject}">
 			   <div class="col-lg-4 col-md-6 mb-4">
+			   
+			   	<c:if test="${subject.confirmed eq 1}">
             <div class="card h-100">
-              <a href="#" onclick="c_sub(); return false;"><img class="card-img-top" src="img/sub_img/${subject.subjectImage}" alt="a"></a>
+              <a href="#" onclick="c_sub(); return false;"><img class="card-img-top" src="img/sub_img/${subject.subjectImage}" alt="a" width=600px, height=200px ></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="list.do?subjectName=${subject.subjectName}">${subject.subjectName}</a>
@@ -157,7 +210,9 @@
                 <p class="card-text">${subject.content}</p>
               </div>
               <div class="card-footer">
-              
+       
+              	
+              	
                <c:choose>
        			  <c:when test = "${subject.subjectScore>90 and subject.subjectScore<=100 }">
          			<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
@@ -181,8 +236,10 @@
      				 </c:choose>
               </div>
             </div>
+                   	</c:if>
           </div>
 		</c:forEach>
+	
 		
      
         </div>

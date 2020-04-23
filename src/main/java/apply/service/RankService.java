@@ -38,8 +38,8 @@ public class RankService {
 		return dao.radar();
 	}
 	
-	public List<SubjectDto> user_hap(String user_hap_total){
-		return dao.user_hap(user_hap_total);
+	public List<SubjectDto> user_hap(String user_hap_total, String age){
+		return dao.user_hap(user_hap_total,age);
 	}
 	 
 

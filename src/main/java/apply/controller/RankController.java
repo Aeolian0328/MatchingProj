@@ -172,23 +172,40 @@ public class RankController {
 			}
 		
 		
-		List<Integer> user_hap_total = new ArrayList<>(); 
+		List<Integer> user_hap_total_20 = new ArrayList<>(); 
+		List<Integer> user_hap_total_30 = new ArrayList<>(); 
+		List<Integer> user_hap_total_40 = new ArrayList<>(); 
+		
+		String age_20 = "2";
+		String age_30 = "3";
+		String age_40 = "4";
+		
 		System.out.println("태그네임"+tagname);
 		
 		List<SubjectDto> list6 = new ArrayList<>();
-		
+		List<SubjectDto> list7 = new ArrayList<>();
+		List<SubjectDto> list8 = new ArrayList<>();
+ 
 		for(int i=0;i<tagname.size();i++) {
 //			System.out.println(tagname.get(i));
 			
-			list6.addAll(rank.user_hap(tagname.get(i)));
+			list6.addAll(rank.user_hap(tagname.get(i),age_20));
+			list7.addAll(rank.user_hap(tagname.get(i),age_30));
+			list8.addAll(rank.user_hap(tagname.get(i),age_40));
 		}
-	
-		
 		
 		for(int i=0;i<list6.size();i++) {
-			user_hap_total.add(list6.get(i).getSum());
+			user_hap_total_20.add(list6.get(i).getSum());
 			}
-		System.out.println("출력"+user_hap_total);
+		for(int i=0;i<list7.size();i++) {
+			user_hap_total_30.add(list7.get(i).getSum());
+			}
+		for(int i=0;i<list8.size();i++) {
+			user_hap_total_40.add(list8.get(i).getSum());
+			}
+		
+		
+
 		
 		
 		System.out.println("m"+month3_sub);
@@ -205,7 +222,9 @@ public class RankController {
 		model.addAttribute("year", year);
 		model.addAttribute("use_count", use_count);
 		model.addAttribute("tagname", tagname);
-		model.addAttribute("user_hap_total", user_hap_total);
+		model.addAttribute("user_hap_total_20", user_hap_total_20);
+		model.addAttribute("user_hap_total_30", user_hap_total_30);
+		model.addAttribute("user_hap_total_40", user_hap_total_40);
 		
 	
 		Gson json = new Gson(); 		
