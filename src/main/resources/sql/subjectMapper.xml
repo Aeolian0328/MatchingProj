@@ -20,6 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where
 		<![CDATA[ endTime >= #{finish_date} ]]>
 		and subjecttag=#{name}
+		and confirmed = 1
 	</select>
 	
 	

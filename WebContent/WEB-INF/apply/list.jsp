@@ -197,9 +197,13 @@
 
 	
 		<c:forEach var="subject" items="${subject}">
+		<script>
+		alert(subject);
+
+		</script>
 			   <div class="col-lg-4 col-md-6 mb-4">
 			   
-			   	<c:if test="${subject.confirmed eq 1}">
+<%-- 			   	<c:if test="${subject.confirmed eq 1}"> --%>
             <div class="card h-100">
               <a href="#" onclick="c_sub(); return false;"><img class="card-img-top" src="img/sub_img/${subject.subjectImage}" alt="a" width=600px, height=200px ></a>
               <div class="card-body">
@@ -236,7 +240,7 @@
      				 </c:choose>
               </div>
             </div>
-                   	</c:if>
+<%--                    	</c:if> --%>
           </div>
 		</c:forEach>
 	
