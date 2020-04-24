@@ -21,6 +21,14 @@ function deleteStudent(s_num)
 	}
 	
 }
+function logout()
+{
+    if(confirm("로그아웃?"))
+        {
+        	location.href="logOut.do";
+        }
+ }
+
 
 </script>
 <head>
@@ -81,6 +89,12 @@ function deleteStudent(s_num)
         <a class="nav-link" href="adminSubjectTables.do">
           <i class="fas fa-fw fa-table"></i>
           <span>Subject-Manager</span></a>
+      </li>
+      
+          <li class="nav-item active">
+        <a class="nav-link"  onclick="logout()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>LogOut</span></a>
       </li>
        
       

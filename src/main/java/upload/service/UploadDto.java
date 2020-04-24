@@ -11,12 +11,23 @@ public class UploadDto {
 	private int cost;
 	private String subjecttag;
 	private String t_email;
+	private int confirmed;
 	
+	public int getConfirmed() {
+		return confirmed;
+	}
+
+
+	public void setConfirmed(int confirmed) {
+		this.confirmed = confirmed;
+	}
+
+
 	public UploadDto() {}
 		
 
 	public UploadDto(int subjectNum, String subjectName, String startTime, String endTime, String subjectImage,
-			String content, int cost, String subjecttag, String t_email) {
+			String content, int cost, String subjecttag, String t_email, int confirmed) {
 		super();
 		this.subjectNum = subjectNum;
 		this.subjectName = subjectName;
@@ -27,6 +38,7 @@ public class UploadDto {
 		this.cost = cost;
 		this.subjecttag = subjecttag;
 		this.t_email = t_email;
+		this.confirmed = confirmed;
 	}
 
 

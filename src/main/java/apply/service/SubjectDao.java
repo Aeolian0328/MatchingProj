@@ -108,25 +108,7 @@ public class SubjectDao extends SqlSessionDaoSupport{
 		sqlSession.update("subject.confirm", subjectNum);
 	}
 	
-	
-	
 
-	
-	/*
-	 * public void s_enroll(SubjectDto a) {
-	 * 
-	 * String sql= "insert into "+a.getSubjectName(); sql = sql +
-	 * " values("+a.getSubjectName()+"," + a.getS_email()+")";
-	 * System.out.println(sql); try { HashMap map = new HashMap(); map.put("sql1",
-	 * sql); t= getSqlSession().insert("subject.apply",map);
-	 * 
-	 * if (t != 0) { System.out.println("수강 신청 완료"); } else {
-	 * System.out.println("수강 신청 실패"); }
-	 * 
-	 * } catch (Exception e) { System.out.println("수강 신청 실패"); }
-	 * 
-	 * }
-	 */
 	
 
 }

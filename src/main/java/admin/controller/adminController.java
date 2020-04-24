@@ -73,11 +73,8 @@ public class adminController {
 	//강좌 리스트
 	@RequestMapping(value = "adminSubjectTables.do", method = RequestMethod.GET)
 	public  String unConfirmedList(Model tModel)
-	{
-	
-		
+	{	
 		List<SubjectDto> list = subjectService.unConfirmed();
-		
 		tModel.addAttribute("list",list);
 		return "admin/SubjectManager";
 	}

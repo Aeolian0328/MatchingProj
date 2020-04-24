@@ -61,5 +61,7 @@ alter table teacher add photo varchar(30) default '0';
 
 alter table student add foreign key (photo) references photo_name(photo);
 alter table teacher add foreign key (photo) references photo_name(photo);
-insert into student()
+insert into student();
 
+alter table student add who varchar(16) default "s";
+alter table teacher add who varchar(16) default "t";

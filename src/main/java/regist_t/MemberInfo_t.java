@@ -10,6 +10,7 @@ public class MemberInfo_t {
 	private String t_phone;
 	private MultipartFile photo;
 	private String strphoto;
+	private String who;
 	
 	public String getName() {
 		return name;
@@ -54,5 +55,11 @@ public class MemberInfo_t {
 	public void setStrphoto(String strphoto) {
 		this.strphoto = strphoto;
 	}
-
+	public String getWho() {
+		return who;
+	}
+	public void setWho(String who) {
+		this.who = who;
+	}
+	
 }

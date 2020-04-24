@@ -11,6 +11,7 @@
     <title>SB Admin</title>
     <script language="javascript">
         window.location.href = "dist/index.html"
+        /* window.location.href = "dist/index.html" */
     </script>
     
 

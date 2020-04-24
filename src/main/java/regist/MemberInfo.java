@@ -11,6 +11,7 @@ public class MemberInfo {
 	private String s_tag;
 	private MultipartFile photo;
 	private String strphoto;
+	private String who;
 
 	public String getName() {
 		return name;
@@ -59,6 +60,12 @@ public class MemberInfo {
 	}
 	public void setStrphoto(String strphoto) {
 		this.strphoto = strphoto;
+	}
+	public String getWho() {
+		return who;
+	}
+	public void setWho(String who) {
+		this.who = who;
 	}
 	
 	

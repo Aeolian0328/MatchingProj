@@ -28,6 +28,14 @@ function confirmSubject(subjectNum)
 		}
 }
 
+function logout()
+{
+    if(confirm("로그아웃?"))
+        {
+        	location.href="logOut.do";
+        }
+}
+
 
 </script>
 <head>
@@ -87,7 +95,13 @@ function confirmSubject(subjectNum)
        <li class="nav-item active">
         <a class="nav-link" href="adminSubjectTables.do">
           <i class="fas fa-fw fa-table"></i>
-          <span>Teacher-Manager</span></a>
+          <span>Subject-Manager</span></a>
+      </li>
+      
+          <li class="nav-item active">
+        <a class="nav-link"  onclick="logout()">
+          <i class="fas fa-fw fa-table"></i>
+          <span>LogOut</span></a>
       </li>
       
 
@@ -240,13 +254,13 @@ function confirmSubject(subjectNum)
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">회원 관리</h1>
+          <h1 class="h3 mb-2 text-gray-800">강좌 관리</h1>
 <!--           <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
  -->
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary"></h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -257,7 +271,6 @@ function confirmSubject(subjectNum)
                       <th>강좌 명</th>
                       <th>개강 날짜</th>
                       <th>종강 날짜</th>
-                      <th>과목 개요</th>
                       <th>수강료</th>
                       <th>분류</th>
                       <th>강사 이메일</th>
@@ -275,7 +288,6 @@ function confirmSubject(subjectNum)
      			 <td>${SubjectDto.subjectName}</td>
     			  <td>${SubjectDto.startTime}</td>
      			 <td>${SubjectDto.endTime}</td>
-     			 <td>${SubjectDto.content}</td>
      			 <td>${SubjectDto.cost}</td>
      			 <td>${SubjectDto.subjecttag}</td>
      			 <td>${SubjectDto.t_email}</td>

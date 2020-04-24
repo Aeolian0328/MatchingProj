@@ -1,8 +1,11 @@
-
+<%@ page contentType="text/html;"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <!-- <meta charset="utf-8" /> -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -131,7 +134,7 @@ function chart(args){
         labels: args.tagname,
         datasets: [
         	{
-            label: "20대",	
+            label: "20ë",	
             data: args.user_hap_total_20,
             backgroundColor: color(chartColors.red).alpha(0.2).rgbString(),
             borderColor: chartColors.red,
@@ -139,7 +142,7 @@ function chart(args){
          
         },
         {
-            label: "30대",	
+            label: "30ë",	
             data: args.user_hap_total_30,
             backgroundColor: color(chartColors.blue).alpha(0.2).rgbString(),
             borderColor: chartColors.blue,
@@ -147,7 +150,7 @@ function chart(args){
          
         },
         {
-            label: "40대",	
+            label: "40ë",	
             data: args.user_hap_total_40,
             backgroundColor: color(chartColors.orange).alpha(0.2).rgbString(),
             borderColor: chartColors.orange,
@@ -325,13 +328,39 @@ function chart(args){
 
     </head>
     <body class="sb-nav-fixed">
- 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="main.do">MatchingService</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                      
+                        <c:if test="${loginData.who eq 't'}">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="upload.do">ê°ì¢ ìë¡ë</a></li>
+                        </c:if>
+                        <c:if test="${loginData.who eq 's'}">
+          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do?name=ì»´í¨í°">ìê°ì ì²­</a></li>
+          				</c:if>
+          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="graph1.do">íµê³</a></li>
+          				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="BoardList.do">QnA</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" id = "logIn" href="loginSelect.do">ë¡ê·¸ì¸</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="RegistSelect.do">íìê°ì</a></li>
+
+               
+                          <c:if test="${loginData.name ne null}">
+                        	<li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="logout()">ë¡ê·¸ìì</a></li>
+                        	<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index" >[íì : ${loginData.name}]</a></li>
+                        </c:if>
+                         
+                    </ul>
+                </div>
+            </div>
+        </nav>
     
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> --> 
+     <!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> --> -->
       
       
 <!--     <div class="container"> -->
-<!--       <a class="navbar-brand" href="index.jsp">프로젝트</a> -->
+<!--       <a class="navbar-brand" href="index.jsp">íë¡ì í¸</a> -->
 <!--       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
 <!--         <span class="navbar-toggler-icon"></span> -->
 <!--       </button> -->
@@ -343,11 +372,11 @@ function chart(args){
 <!--             </a> -->
 <!--           </li> -->
 <!--           <li class="nav-item"> -->
-<!--             <a class="nav-link" href="index1.do">수강신청</a> -->
+<!--             <a class="nav-link" href="index1.do">ìê°ì ì²­</a> -->
 <!--           </li> -->
           
 <!--           <li class="nav-item"> -->
-<!--             <a class="nav-link" href="graph1.do">통계</a> -->
+<!--             <a class="nav-link" href="graph1.do">íµê³</a> -->
 <!--           </li> -->
        
 <!--         </ul> -->
@@ -361,12 +390,12 @@ function chart(args){
 <!--                     <ul class="navbar-nav ml-auto my-2 my-lg-0"> -->
 <!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li> -->
 <!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="">Services</a></li> -->
-<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="upload.do">강좌 업로드</a></li> -->
-<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do">수강신청</a></li> -->
-<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="graph1.do">통계</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="upload.do">ê°ì¢ ìë¡ë</a></li> -->
+<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="index1.do">ìê°ì ì²­</a></li> -->
+<!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="graph1.do">íµê³</a></li> -->
 <!--           				<li class="nav-item"><a class="nav-link js-scroll-trigger" href="BoardList.do">QnA</a></li> -->
-<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" id = "logIn" href="loginSelect.do">로그인</a></li> -->
-<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="RegistSelect.do">회원가입</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" id = "logIn" href="loginSelect.do">ë¡ê·¸ì¸</a></li> -->
+<!--                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="RegistSelect.do">íìê°ì</a></li> -->
 
                
      
@@ -377,7 +406,7 @@ function chart(args){
             
             
             
-   </nav> 
+<!--   </nav> -->
 
 
     
@@ -440,7 +469,7 @@ function chart(args){
                         Start Bootstrap
                     </div>
                 </nav>
-            </div>  -->
+            </div> -->
 <!--             <div id="layoutSidenav_content"> -->
                 <main>
                     <div class="container-fluid">
@@ -492,23 +521,23 @@ function chart(args){
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>월별 수강 인원</div>
+                                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>ìë³ ìê° ì¸ì</div>
                                     <div class="card-body"><canvas id="myLineChart1" width="100%" height="54"></canvas></div>
                                     
-                                     <div class="card-header"><i class="fas fa-chart-area mr-1"></i>수강 테마별 분포도</div>
+                                     <div class="card-header"><i class="fas fa-chart-area mr-1"></i>ìê° íë§ë³ ë¶í¬ë</div>
                                     <div class="card-body"><canvas id="myRadarChart1" width="100%" height="54"></canvas></div>
                                     
                                 </div>
                             </div>
                             <div class="col-xl-6">
                                 <div class="card mb-4">
-                                    <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>저번달 인기강좌(최근3개월)</div>
+                                    <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>ì ë²ë¬ ì¸ê¸°ê°ì¢(ìµê·¼3ê°ì)</div>
                                     <div class="card-body"><canvas id="myBarChart1" width="100%" height="32"></canvas></div>
                                     
-                                     <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>저저번달 인기강좌(최근3개월)</div>
+                                     <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>ì ì ë²ë¬ ì¸ê¸°ê°ì¢(ìµê·¼3ê°ì)</div>
                                     <div class="card-body"><canvas id="myBarChart2" width="100%" height="32"></canvas></div>
                                     
-                                     <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>저저저번달 인기강좌(최근3개월)</div>
+                                     <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>ì ì ì ë²ë¬ ì¸ê¸°ê°ì¢(ìµê·¼3ê°ì)</div>
                                     <div class="card-body"><canvas id="myBarChart3" width="100%" height="32"></canvas></div>
                                     
                                     
