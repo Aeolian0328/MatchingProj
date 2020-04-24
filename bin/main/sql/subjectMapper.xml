@@ -28,6 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from subject where subjectName=#{a}
 	</select>
 	
+	
+	
+	
 	<update id="countup" parameterType="apply.model.SubjectDto">
 		update subject
 		set studentCount=studentCount+1
